@@ -17,30 +17,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqk-nT-uBh">
-                                <rect key="frame" x="0.0" y="28" width="270" height="90"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1xZ-5K-Lf4">
+                                <rect key="frame" x="0.0" y="53" width="320" height="160"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-H8-qx3">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="90"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqk-nT-uBh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-H8-qx3">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="Jbb-NZ-Fco"/>
+                                                </constraints>
+                                                <state key="normal" title="Team"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-br-D04">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="Z1U-1p-gzQ"/>
+                                                    <constraint firstAttribute="width" constant="160" id="yVo-Hj-FFF"/>
+                                                </constraints>
+                                                <state key="normal" title="Clues"/>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="180" id="QyJ-iH-XON"/>
+                                            <constraint firstAttribute="height" constant="160" id="0W1-YO-yOf"/>
                                         </constraints>
-                                        <state key="normal" title="Team"/>
-                                        <connections>
-                                            <action selector="teamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t1P-af-4NA"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-br-D04">
-                                        <rect key="frame" x="180" y="0.0" width="90" height="90"/>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="t8H-Dp-hgo">
+                                <rect key="frame" x="0.0" y="213" width="320" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxp-Oa-RQb">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYi-Jx-pPK">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="VRr-nt-1vk"/>
+                                                </constraints>
+                                                <state key="normal" title="LeaderBoards"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iY-Un-27w">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="90" id="UYK-8I-OhY"/>
+                                                    <constraint firstAttribute="width" constant="160" id="cbW-V0-td9"/>
+                                                </constraints>
+                                                <state key="normal" title="Map"/>
+                                                <connections>
+                                                    <action selector="teamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Udq-sj-eEI"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="Nth-S0-CRL"/>
-                                            <constraint firstAttribute="height" constant="90" id="Z1U-1p-gzQ"/>
+                                            <constraint firstAttribute="height" constant="160" id="S1G-gl-ZcC"/>
                                         </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="teamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zd0-xO-Gsc"/>
-                                        </connections>
-                                    </button>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OQd-XB-5wL">
+                                <rect key="frame" x="0.0" y="373" width="320" height="160"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="76i-72-JUI">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LqG-D9-3hg">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-Dk-rbf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="160" id="AAn-n8-9fC"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Log In"/>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-EW-mcn">
+                                                        <rect key="frame" x="160" y="0.0" width="160" height="160"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="90" id="YJj-Wa-6gf"/>
+                                                            <constraint firstAttribute="width" constant="160" id="mH3-fA-XKw"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Settings"/>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="Ydf-kv-HM4"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
