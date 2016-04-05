@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0C388A1CB3B9890014D886 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C38891CB3B9890014D886 /* Map.swift */; };
 		6A12790C1CB390C20018A87D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12790B1CB390C20018A87D /* AppDelegate.swift */; };
 		6A12790E1CB390C20018A87D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12790D1CB390C20018A87D /* ViewController.swift */; };
 		6A1279111CB390C20018A87D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A12790F1CB390C20018A87D /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A0C38891CB3B9890014D886 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		6A1279081CB390C20018A87D /* ClownFiesta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClownFiesta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A12790B1CB390C20018A87D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A12790D1CB390C20018A87D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			children = (
 				6A12790B1CB390C20018A87D /* AppDelegate.swift */,
 				6A12790D1CB390C20018A87D /* ViewController.swift */,
+				6A0C38891CB3B9890014D886 /* Map.swift */,
 				6A12790F1CB390C20018A87D /* Main.storyboard */,
 				6A1279121CB390C20018A87D /* Assets.xcassets */,
 				6A1279141CB390C20018A87D /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6A12790E1CB390C20018A87D /* ViewController.swift in Sources */,
+				6A0C388A1CB3B9890014D886 /* Map.swift in Sources */,
 				6A12790C1CB390C20018A87D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ClownFiesta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClownFiesta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -414,6 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ClownFiesta/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.ClownFiesta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +493,7 @@
 				6A1279321CB390C20018A87D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A1279331CB390C20018A87D /* Build configuration list for PBXNativeTarget "ClownFiestaTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +502,7 @@
 				6A1279351CB390C20018A87D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6A1279361CB390C20018A87D /* Build configuration list for PBXNativeTarget "ClownFiestaUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +511,7 @@
 				6A1279381CB390C20018A87D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

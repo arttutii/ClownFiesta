@@ -7,10 +7,17 @@
 //
 
 import UIKit
+import CoreLocation
+import MapKit
 
-class ViewController: UIViewController {
+
+class ViewController: UIViewController, CLLocationManagerDelegate{
     
     // MARK: Properties
+    
+    let AppMap =  Map()
+    
+    let locationManager = CLLocationManager()
     
     @IBOutlet weak var teamButton: UIButton!
 
@@ -18,11 +25,30 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         teamButton.layer.borderWidth = 1
         teamButton.layer.borderColor = UIColor.blackColor().CGColor
+        
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        AppMap.currentLatitude = locValue.latitude
+        AppMap.currentLongtitude = locValue.longitude
     }
     
     // MARK: Actions
     @IBAction func teamButton(sender: UIButton) {
-        
+        AppMap.openMap()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,5 +64,7 @@ class ViewController: UIViewController {
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
     }
+    
+
 }
 
