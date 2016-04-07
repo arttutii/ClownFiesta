@@ -20,12 +20,6 @@ class FiestaController: UIViewController {
         
         
     }
-    
-    // MARK: Actions
-    @IBAction func tapGesture(sender: UITapGestureRecognizer) {
-        performSegueWithIdentifier("fiestaPush", sender: nil)
-        print("hello")
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

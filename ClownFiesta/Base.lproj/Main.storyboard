@@ -86,35 +86,30 @@
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OQd-XB-5wL">
                                 <rect key="frame" x="0.0" y="373" width="320" height="160"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="76i-72-JUI">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LqG-D9-3hg">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LqG-D9-3hg">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-Dk-rbf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="160" id="AAn-n8-9fC"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Log In"/>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-EW-mcn">
-                                                        <rect key="frame" x="160" y="0.0" width="160" height="160"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="160" id="mH3-fA-XKw"/>
-                                                        </constraints>
-                                                        <state key="normal" title="Settings"/>
-                                                        <connections>
-                                                            <segue destination="Z7s-XR-iCe" kind="push" id="V0y-QF-gXf"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hVP-Dk-rbf">
+                                                <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="Ydf-kv-HM4"/>
+                                                    <constraint firstAttribute="width" constant="160" id="AAn-n8-9fC"/>
                                                 </constraints>
-                                            </stackView>
+                                                <state key="normal" title="Log In"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-EW-mcn">
+                                                <rect key="frame" x="160" y="0.0" width="160" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="160" id="mH3-fA-XKw"/>
+                                                </constraints>
+                                                <state key="normal" title="Settings"/>
+                                                <connections>
+                                                    <segue destination="Z7s-XR-iCe" kind="push" id="V0y-QF-gXf"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="160" id="Ydf-kv-HM4"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -172,10 +167,10 @@
             </objects>
             <point key="canvasLocation" x="1141" y="1114"/>
         </scene>
-        <!--View Controller-->
+        <!--Fiesta Controller-->
         <scene sceneID="rTf-8U-Mct">
             <objects>
-                <viewController id="4Nx-s4-nhv" customClass="ViewController" customModule="ClownFiesta" sceneMemberID="viewController">
+                <viewController id="4Nx-s4-nhv" customClass="FiestaController" customModule="ClownFiesta" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eRy-pD-JzU"/>
                         <viewControllerLayoutGuide type="bottom" id="Bgv-eT-0Gk"/>
@@ -190,7 +185,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WnT-On-car">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <connections>
-                                    <segue destination="NlV-07-bA5" kind="modal" id="jUW-vZ-47j"/>
+                                    <segue destination="NlV-07-bA5" kind="modal" identifier="fiestaModal" id="jUW-vZ-47j"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -278,7 +273,7 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="xP0-Se-ysC"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="TxQ-Yc-9Bi" kind="push" id="9RB-CE-vGz"/>
+                        <segue destination="TxQ-Yc-9Bi" kind="push" identifier="gamePush" id="9RB-CE-vGz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-wA-E3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
