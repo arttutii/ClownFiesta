@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="NlV-07-bA5">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Clown Fiesta-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ClownFiesta" customModuleProvider="target" sceneMemberID="viewController">
@@ -29,6 +29,9 @@
                                                     <constraint firstAttribute="width" constant="160" id="Jbb-NZ-Fco"/>
                                                 </constraints>
                                                 <state key="normal" title="Team"/>
+                                                <connections>
+                                                    <segue destination="Yxs-0b-kpT" kind="push" id="8gu-51-goU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-br-D04">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="160"/>
@@ -112,13 +115,53 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Clown Fiesta" id="gkY-wL-rN7"/>
                     <connections>
                         <outlet property="teamButton" destination="kXl-H8-qx3" id="phw-Ef-gf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="704" y="366"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="acH-YS-QLR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NlV-07-bA5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aV9-fM-F9C">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gOr-tG-RI6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A0j-o9-OLW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="172" y="366"/>
+        </scene>
+        <!--Team-->
+        <scene sceneID="PXx-hX-wMv">
+            <objects>
+                <viewController id="Yxs-0b-kpT" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VlC-4s-Yzz"/>
+                        <viewControllerLayoutGuide type="bottom" id="T2U-Lx-0rG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Teu-I7-cbw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Team" id="kkI-t6-1eD">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="wv4-ql-cf6"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-IX-MW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197" y="366"/>
         </scene>
     </scenes>
 </document>

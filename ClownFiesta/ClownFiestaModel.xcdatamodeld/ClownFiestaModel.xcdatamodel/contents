@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Xcode 7.0">
+    <entity name="Clues" syncable="YES">
+        <attribute name="cluedescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hint" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="clues" inverseEntity="Game" syncable="YES"/>
+    </entity>
+    <entity name="Game" syncable="YES">
+        <attribute name="gameclues" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mode" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="clues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Clues" inverseName="game" inverseEntity="Clues" syncable="YES"/>
+    </entity>
+    <entity name="Leaderboard" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="rank" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Map" syncable="YES"/>
+    <entity name="Player" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="team" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="player" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="Team" representedClassName="Team" syncable="YES">
+        <attribute name="members" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="player" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Player" inverseName="team" inverseEntity="Player" syncable="YES"/>
+        <relationship name="rank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Leaderboard" inverseName="team" inverseEntity="Leaderboard" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Team" positionX="-270" positionY="-165" width="128" height="88"/>
+        <element name="Player" positionX="-47" positionY="-219" width="128" height="75"/>
+        <element name="Map" positionX="-353" positionY="-252" width="128" height="45"/>
+        <element name="Clues" positionX="-333" positionY="81" width="128" height="90"/>
+        <element name="Leaderboard" positionX="-47" positionY="-126" width="128" height="103"/>
+        <element name="Game" positionX="0" positionY="81" width="128" height="90"/>
+    </elements>
+</model>
