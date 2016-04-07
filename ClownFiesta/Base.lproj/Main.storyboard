@@ -36,10 +36,12 @@
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-br-D04">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="160"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="Z1U-1p-gzQ"/>
                                                     <constraint firstAttribute="width" constant="160" id="yVo-Hj-FFF"/>
                                                 </constraints>
                                                 <state key="normal" title="Clues"/>
+                                                <connections>
+                                                    <segue destination="9iv-NM-5g2" kind="push" id="feH-gw-rU5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -59,12 +61,14 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="160" id="VRr-nt-1vk"/>
                                                 </constraints>
-                                                <state key="normal" title="LeaderBoards"/>
+                                                <state key="normal" title="Leaderboard"/>
+                                                <connections>
+                                                    <segue destination="Vt5-zL-2Dd" kind="push" id="qgL-d0-BJP"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iY-Un-27w">
                                                 <rect key="frame" x="160" y="0.0" width="160" height="160"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="UYK-8I-OhY"/>
                                                     <constraint firstAttribute="width" constant="160" id="cbW-V0-td9"/>
                                                 </constraints>
                                                 <state key="normal" title="Map"/>
@@ -98,10 +102,12 @@
                                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFq-EW-mcn">
                                                         <rect key="frame" x="160" y="0.0" width="160" height="160"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="90" id="YJj-Wa-6gf"/>
                                                             <constraint firstAttribute="width" constant="160" id="mH3-fA-XKw"/>
                                                         </constraints>
                                                         <state key="normal" title="Settings"/>
+                                                        <connections>
+                                                            <segue destination="Z7s-XR-iCe" kind="push" id="V0y-QF-gXf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -123,6 +129,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="366"/>
+        </scene>
+        <!--Leaderboard-->
+        <scene sceneID="xTE-Pm-DcV">
+            <objects>
+                <viewController id="Vt5-zL-2Dd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hrA-rY-VHn"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uim-pp-7ak"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tyR-GY-EAu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Leaderboard" id="row-OH-IGM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WJw-cd-cCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1164" y="734"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="FOJ-uL-3eH">
+            <objects>
+                <viewController id="Z7s-XR-iCe" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G0i-Os-CTq"/>
+                        <viewControllerLayoutGuide type="bottom" id="0cp-jF-QMn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0f3-Bx-o4B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="Npq-PQ-yGC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRa-Qp-MZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552" y="734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="acH-YS-QLR">
@@ -161,7 +205,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-IX-MW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="366"/>
+            <point key="canvasLocation" x="1143" y="-12"/>
+        </scene>
+        <!--Clues-->
+        <scene sceneID="09J-a1-Df9">
+            <objects>
+                <viewController id="9iv-NM-5g2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gho-ZM-vrA"/>
+                        <viewControllerLayoutGuide type="bottom" id="Bil-Hu-Cs0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7wG-2F-AnC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Clues" id="f5p-hO-0sj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-wA-E3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1516" y="-21"/>
         </scene>
     </scenes>
 </document>
