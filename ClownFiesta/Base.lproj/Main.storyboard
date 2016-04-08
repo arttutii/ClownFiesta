@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -73,7 +73,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Map"/>
                                                 <connections>
-                                                    <action selector="teamButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Udq-sj-eEI"/>
+                                                    <segue destination="IeS-EL-5Vj" kind="push" id="v8b-dB-yyl"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -124,6 +124,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="366"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="Gum-YM-3t2">
+            <objects>
+                <viewController id="IeS-EL-5Vj" customClass="MapController" customModule="ClownFiesta" sceneMemberID="viewController">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="qfJ-DK-hPc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <navigationItem key="navigationItem" title="Map" id="SqJ-XD-4gL">
+                        <barButtonItem key="backBarButtonItem" title="back" id="1Kq-LZ-xIJ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="qfJ-DK-hPc" id="6We-5s-CEz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mqv-ZM-p1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="519" y="1133"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="xTE-Pm-DcV">

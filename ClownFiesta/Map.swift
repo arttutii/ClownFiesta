@@ -19,15 +19,26 @@ class Map{
     var currentLatitude: Double = 0.0
     var currentLongtitude: Double = 0.0
     
+    let regionRadius: CLLocationDistance = 1000
+    
+    init() {
+    self.currentLongtitude = 0.0
+    self.currentLatitude = 0.0
+    }
+
+    /* Keep for later development (unused method)
     func openMap(){
         
         let lat1 : NSString = String(currentLatitude)
         let lng1 : NSString = String(currentLongtitude)
         
-        let latitute:CLLocationDegrees =  lat1.doubleValue
-        let longitute:CLLocationDegrees =  lng1.doubleValue
+        let latitude:CLLocationDegrees =  lat1.doubleValue
+        let longtitude:CLLocationDegrees =  lng1.doubleValue
         
-        let coordinate = CLLocationCoordinate2DMake(latitute, longitute)
+        currentLatitude = latitude
+        currentLongtitude = longtitude
+        
+        let coordinate = CLLocationCoordinate2DMake(latitude, longtitude)
         
         let placemark : MKPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary:nil)
         
@@ -40,10 +51,7 @@ class Map{
         let currentLocationMapItem:MKMapItem = MKMapItem.mapItemForCurrentLocation()
         
         MKMapItem.openMapsWithItems([currentLocationMapItem, mapItem], launchOptions: launchOptions as! [String : AnyObject])
-        
     }
-    
-    
-    
+    */
     
 }
