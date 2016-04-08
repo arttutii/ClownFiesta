@@ -1,15 +1,16 @@
 //
-//  ViewController.swift
+//  GameViewController.swift
 //  ClownFiesta
 //
-//  Created by iosdev on 5.4.2016.
+//  Created by iosdev on 8.4.2016.
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController{
-    
+
+class GameViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,5 +19,6 @@ class ViewController: UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.s
     }
+    
     
 }
