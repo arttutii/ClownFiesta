@@ -11,8 +11,12 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    // MARK: Properties
+    @IBOutlet weak var modeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func didReceiveMemoryWarning() {
