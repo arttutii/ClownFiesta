@@ -19,49 +19,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-H8-qx3">
-                                <rect key="frame" x="160" y="64" width="160" height="160"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="Jbb-NZ-Fco"/>
-                                </constraints>
-                                <state key="normal" title="Team"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXl-H8-qx3">
+                                <rect key="frame" x="158" y="64" width="162" height="160"/>
+                                <state key="normal" image="LargeTeamIcon"/>
                                 <connections>
                                     <segue destination="Yxs-0b-kpT" kind="push" id="8gu-51-goU"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYi-Jx-pPK">
-                                <rect key="frame" x="0.0" y="64" width="160" height="160"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="VRr-nt-1vk"/>
-                                </constraints>
-                                <state key="normal" title="User"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYi-Jx-pPK">
+                                <rect key="frame" x="0.0" y="64" width="161" height="160"/>
+                                <state key="normal" image="LargeUserIcon"/>
                                 <connections>
                                     <segue destination="Vt5-zL-2Dd" kind="push" id="qgL-d0-BJP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-br-D04">
-                                <rect key="frame" x="0.0" y="227" width="320" height="341"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="wvm-br-D04" secondAttribute="height" multiplier="320:341" id="BNS-Na-k0N"/>
-                                    <constraint firstAttribute="width" constant="160" id="yVo-Hj-FFF"/>
-                                </constraints>
-                                <state key="normal" title="Game"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvm-br-D04">
+                                <rect key="frame" x="0.0" y="232" width="320" height="336"/>
+                                <state key="normal" image="LargeChestIcon"/>
                                 <connections>
                                     <segue destination="9iv-NM-5g2" kind="push" id="feH-gw-rU5"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKB-hd-Hy4">
+                                <rect key="frame" x="57" y="170" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Team" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-FZ-5Aw">
+                                <rect key="frame" x="218" y="170" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Treasure Hunt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUO-QA-m3T">
+                                <rect key="frame" x="106" y="434" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="kXl-H8-qx3" secondAttribute="trailing" constant="-20" id="Dbu-hi-LIh"/>
-                            <constraint firstItem="kXl-H8-qx3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="DiY-7o-dfz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="wvm-br-D04" secondAttribute="trailing" constant="-20" id="KtT-uy-u4W"/>
-                            <constraint firstItem="kXl-H8-qx3" firstAttribute="leading" secondItem="KYi-Jx-pPK" secondAttribute="trailing" id="LIB-3n-ifQ"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wvm-br-D04" secondAttribute="bottom" id="MD4-gK-HZA"/>
-                            <constraint firstItem="wvm-br-D04" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="UJh-ld-xfB"/>
-                            <constraint firstItem="KYi-Jx-pPK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="dgD-Ho-qqP"/>
-                            <constraint firstItem="wvm-br-D04" firstAttribute="top" secondItem="kXl-H8-qx3" secondAttribute="bottom" constant="3" id="slC-2u-HAu"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gkY-wL-rN7"/>
                 </viewController>
@@ -77,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="e0m-77-l59"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapTabBar" id="e0m-77-l59"/>
                     <navigationItem key="navigationItem" title="Map" id="SqJ-XD-4gL">
                         <barButtonItem key="backBarButtonItem" title="back" id="1Kq-LZ-xIJ"/>
                     </navigationItem>
@@ -110,7 +108,7 @@
             </objects>
             <point key="canvasLocation" x="1544" y="14"/>
         </scene>
-        <!--Game Table View Controller-->
+        <!--Game Modes-->
         <scene sceneID="KxZ-yK-5WG">
             <objects>
                 <tableViewController id="huz-Yc-J6H" customClass="GameTableViewController" customModule="ClownFiesta" sceneMemberID="viewController">
@@ -153,7 +151,7 @@
                             <outlet property="delegate" destination="huz-Yc-J6H" id="Krn-Ng-lvZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="7b7-av-UPF">
+                    <navigationItem key="navigationItem" title="Game Modes" id="7b7-av-UPF">
                         <barButtonItem key="backBarButtonItem" title="Back" id="DsZ-Wy-Kug"/>
                     </navigationItem>
                 </tableViewController>
@@ -203,10 +201,29 @@
                                     <segue destination="NlV-07-bA5" kind="modal" identifier="fiestaModal" id="jUW-vZ-47j"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RsR-xe-ng8">
+                                <rect key="frame" x="0.0" y="327" width="320" height="68"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Click to Begin">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="0.5" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="1" green="0.42683046333618346" blue="0.052070728365798069" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="30" name="Helvetica-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.30368134469696972" green="0.083323749857473664" blue="0.084051121934710565" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vg1-4B-qtf"/>
+                    <connections>
+                        <outlet property="fiestaLabel" destination="RsR-xe-ng8" id="tNs-fB-BQt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VEI-Yr-gkc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -290,7 +307,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYj-NT-U1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2193" y="1511"/>
+            <point key="canvasLocation" x="2199" y="1438"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hXX-eL-FW2">
@@ -358,33 +375,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Zq-c7D">
-                                <rect key="frame" x="188" y="64" width="126" height="110"/>
-                                <state key="normal" title="Map"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Zq-c7D">
+                                <rect key="frame" x="160" y="64" width="160" height="159"/>
+                                <state key="normal" image="LargeMapIcon"/>
                                 <connections>
                                     <segue destination="IeS-EL-5Vj" kind="push" id="sVR-1O-ar3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-0a-zvn">
-                                <rect key="frame" x="0.0" y="64" width="134" height="110"/>
-                                <state key="normal" title="Leaderboard"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-0a-zvn">
+                                <rect key="frame" x="5" y="64" width="153" height="159"/>
+                                <state key="normal" image="LargeTrophyIcon"/>
                                 <connections>
                                     <segue destination="Z7s-XR-iCe" kind="push" id="C96-bl-bB8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-ZV-afS">
-                                <rect key="frame" x="0.0" y="190" width="320" height="378"/>
-                                <state key="normal" title="Modes"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-ZV-afS">
+                                <rect key="frame" x="0.0" y="203" width="320" height="365"/>
+                                <state key="normal" image="LargeMaracas"/>
                                 <connections>
                                     <segue destination="huz-Yc-J6H" kind="push" id="8Ly-j9-uBO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGs-uw-Lu4">
+                                <rect key="frame" x="32" y="174" width="98" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99t-Af-pBG">
+                                <rect key="frame" x="223" y="174" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-1q-QXO">
+                                <rect key="frame" x="5" y="395" width="320" height="120"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Game Modes">
+                                        <attributes>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="30" name="HelveticaNeue-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Game" id="f5p-hO-0sj">
                         <barButtonItem key="backBarButtonItem" title="Back" id="xP0-Se-ysC"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="modeLabel" destination="Z1u-1q-QXO" id="XB7-2R-kMe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-wA-E3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,10 +439,17 @@
     </scenes>
     <resources>
         <image name="ClueIcon" width="25" height="25"/>
+        <image name="LargeChestIcon" width="50" height="50"/>
+        <image name="LargeMapIcon" width="50" height="50"/>
+        <image name="LargeMaracas" width="259" height="307"/>
+        <image name="LargeTeamIcon" width="50" height="50"/>
+        <image name="LargeTrophyIcon" width="50" height="50"/>
+        <image name="LargeUserIcon" width="50" height="50"/>
         <image name="Logo" width="640" height="360"/>
         <image name="MapIcon" width="25" height="25"/>
+        <image name="MapTabBar" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cQL-y5-5gs"/>
+        <segue reference="sVR-1O-ar3"/>
     </inferredMetricsTieBreakers>
 </document>

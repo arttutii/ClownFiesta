@@ -17,6 +17,7 @@ class FiestaController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     
     @IBOutlet var fiestaImageView: UIImageView!
+    @IBOutlet weak var fiestaLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
