@@ -55,8 +55,8 @@ class MapController: UIViewController, CLLocationManagerDelegate{
         
         //Check is location is Initial and center only once
         if locationCheck == false {
-        centerMapOnLocation(initialLocation)
-        locationCheck = true
+            centerMapOnLocation(initialLocation)
+            locationCheck = true
         } else {
             // Do nothing
         }
