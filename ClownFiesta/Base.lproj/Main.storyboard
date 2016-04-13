@@ -239,11 +239,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ClueTableViewCell" rowHeight="55" id="j7i-ru-SH9" customClass="ClueTableViewCell" customModule="ClownFiesta">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ClueTableViewCell" rowHeight="55" id="j7i-ru-SH9" customClass="ClueTableViewCell" customModule="ClownFiesta">
                                 <rect key="frame" x="0.0" y="92" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j7i-ru-SH9" id="4XY-eh-GSx">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue #1-6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-Le-Bq2">
@@ -256,6 +256,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="clueLabel" destination="tIM-Le-Bq2" id="BOA-Wp-0DD"/>
+                                    <segue destination="uJs-Y5-xmH" kind="push" id="w2d-V9-j9e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -268,7 +269,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2607" y="688"/>
+            <point key="canvasLocation" x="2539" y="688"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hXX-eL-FW2">
+            <objects>
+                <viewController id="uJs-Y5-xmH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wtK-00-waq"/>
+                        <viewControllerLayoutGuide type="bottom" id="uB3-jp-g9f"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uDz-2y-HbQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="sqp-Vc-iC4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfs-eP-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3062" y="688"/>
         </scene>
         <!--Team-->
         <scene sceneID="PXx-hX-wMv">
