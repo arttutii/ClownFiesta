@@ -13,8 +13,9 @@ class Clue {
     var ClueStart: NSDate
     var ClueEnd: NSDate
     
-    init() {
-        self.ClueDescription = ""
+    
+    init(ClueDescription: String) {
+        self.ClueDescription = ClueDescription
         self.ClueStart = NSDate()
         self.ClueEnd = NSDate()
     }

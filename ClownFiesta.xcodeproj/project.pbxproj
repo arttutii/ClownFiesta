@@ -16,6 +16,8 @@
 		6A1279161CB390C20018A87D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A1279141CB390C20018A87D /* LaunchScreen.storyboard */; };
 		6A1279211CB390C20018A87D /* ClownFiestaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1279201CB390C20018A87D /* ClownFiestaTests.swift */; };
 		6A12792C1CB390C20018A87D /* ClownFiestaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A12792B1CB390C20018A87D /* ClownFiestaUITests.swift */; };
+		6A524A021CBCFE4900FE7F0C /* ClueTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A524A011CBCFE4900FE7F0C /* ClueTableViewController.swift */; };
+		6A524A041CBD02B700FE7F0C /* ClueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A524A031CBD02B700FE7F0C /* ClueTableViewCell.swift */; };
 		6AB8BC991CB7B54A0061C952 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB8BC981CB7B54A0061C952 /* GameTableViewCell.swift */; };
 		6AB8BC9B1CB7B8400061C952 /* GameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB8BC9A1CB7B8400061C952 /* GameTableViewController.swift */; };
 		6AB8BC9D1CB7B87A0061C952 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB8BC9C1CB7B87A0061C952 /* Game.swift */; };
@@ -59,6 +61,8 @@
 		6A1279271CB390C20018A87D /* ClownFiestaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClownFiestaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A12792B1CB390C20018A87D /* ClownFiestaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClownFiestaUITests.swift; sourceTree = "<group>"; };
 		6A12792D1CB390C20018A87D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A524A011CBCFE4900FE7F0C /* ClueTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueTableViewController.swift; sourceTree = "<group>"; };
+		6A524A031CBD02B700FE7F0C /* ClueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClueTableViewCell.swift; sourceTree = "<group>"; };
 		6AB8BC981CB7B54A0061C952 /* GameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		6AB8BC9A1CB7B8400061C952 /* GameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTableViewController.swift; sourceTree = "<group>"; };
 		6AB8BC9C1CB7B87A0061C952 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -124,12 +128,14 @@
 				6AC627411CB66A4A00885DF7 /* FiestaController.swift */,
 				6A0D67BB1CB68D60003CF882 /* MapController.swift */,
 				6A0C38891CB3B9890014D886 /* Map.swift */,
-				6A12790F1CB390C20018A87D /* Main.storyboard */,
+				6AB8BCA01CB7BE2E0061C952 /* GameViewController.swift */,
 				6AB8BC981CB7B54A0061C952 /* GameTableViewCell.swift */,
 				6AB8BC9A1CB7B8400061C952 /* GameTableViewController.swift */,
+				6A524A031CBD02B700FE7F0C /* ClueTableViewCell.swift */,
+				6A524A011CBCFE4900FE7F0C /* ClueTableViewController.swift */,
 				6AB8BC9C1CB7B87A0061C952 /* Game.swift */,
-				6AB8BCA01CB7BE2E0061C952 /* GameViewController.swift */,
 				6AB8BC9E1CB7B8D60061C952 /* Clue.swift */,
+				6A12790F1CB390C20018A87D /* Main.storyboard */,
 				6A1279121CB390C20018A87D /* Assets.xcassets */,
 				6A1279141CB390C20018A87D /* LaunchScreen.storyboard */,
 				6A1279171CB390C20018A87D /* Info.plist */,
@@ -299,8 +305,10 @@
 				6A0C388A1CB3B9890014D886 /* Map.swift in Sources */,
 				6AC627401CB6493200885DF7 /* Team.swift in Sources */,
 				6A12790C1CB390C20018A87D /* AppDelegate.swift in Sources */,
+				6A524A041CBD02B700FE7F0C /* ClueTableViewCell.swift in Sources */,
 				6AC627421CB66A4A00885DF7 /* FiestaController.swift in Sources */,
 				6AB8BC991CB7B54A0061C952 /* GameTableViewCell.swift in Sources */,
+				6A524A021CBCFE4900FE7F0C /* ClueTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

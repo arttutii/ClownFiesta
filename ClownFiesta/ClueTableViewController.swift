@@ -1,17 +1,18 @@
 //
-//  GameTableViewController.swift
+//  ClueTableViewController.swift
 //  ClownFiesta
 //
-//  Created by iosdev on 8.4.2016.
+//  Created by iosdev on 12.4.2016.
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
 import UIKit
 
-class GameTableViewController: UITableViewController {
+class ClueTableViewController: UITableViewController {
     
     // MARK: Properties
-    var games = [Game]()
+    var clues = [Clue]()
+    var clueCount: Int = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ class GameTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadGameModes()
+        loadClues()
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,27 +37,37 @@ class GameTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return clues.count
     }
     
-    func loadGameModes() {
-    
-        let game1 = Game(GameName: "Fiesta", GameClues: [], GameLocation: "Helsinki", GameDescription: "Fun Times!")
-        let game2 = Game(GameName: "Clown", GameClues: [], GameLocation: "Helsinki", GameDescription: "Clown Around!")
+    func loadClues() {
         
-        games += [game1, game2]
+        let clue1 = Clue(ClueDescription: "In a galaxy far, far away..")
+        let clue2 = Clue(ClueDescription: "Behind you")
+        
+        clues += [clue1, clue2]
     }
-
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "GameTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GameTableViewCell
-        let game = games[indexPath.row]
+        let cellIdentifier = "ClueTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
+        let clue = clues[indexPath.row]
         
-        cell.gameLabel.text = game.GameName
-        cell.gameDescription.text = game.GameDescription
-        
+        cell.clueLabel.text = "Clue #\(clueCount)"
+        clueCount += 1
+    
         return cell
     }
+
+    /*
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
 
     /*
     // Override to support conditional editing of the table view.
