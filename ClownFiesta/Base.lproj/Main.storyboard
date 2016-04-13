@@ -77,7 +77,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Item" id="e0m-77-l59"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="e0m-77-l59"/>
                     <navigationItem key="navigationItem" title="Map" id="SqJ-XD-4gL">
                         <barButtonItem key="backBarButtonItem" title="back" id="1Kq-LZ-xIJ"/>
                     </navigationItem>
@@ -266,7 +266,7 @@
                             <outlet property="delegate" destination="08C-eH-SrP" id="2pK-3i-YGI"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Roj-eq-WoA"/>
+                    <tabBarItem key="tabBarItem" title="Clues" image="ClueIcon" selectedImage="ClueIcon" id="Roj-eq-WoA"/>
                     <navigationItem key="navigationItem" title="Clues" id="GdL-zJ-zU8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -378,9 +378,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ClueIcon" width="25" height="25"/>
         <image name="Logo" width="640" height="360"/>
+        <image name="MapIcon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVR-1O-ar3"/>
+        <segue reference="cQL-y5-5gs"/>
     </inferredMetricsTieBreakers>
 </document>
