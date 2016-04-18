@@ -20,7 +20,6 @@ class MapController: UIViewController, CLLocationManagerDelegate{
     
     var locationCheck: Bool = false
    
-    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
@@ -53,7 +52,7 @@ class MapController: UIViewController, CLLocationManagerDelegate{
         AppMap.currentLongtitude = locValue.longitude
         let initialLocation = CLLocation(latitude: AppMap.currentLatitude, longitude: AppMap.currentLongtitude)
         
-        //Check is location is Initial and center only once
+        //Check if location is Initial and center only once
         if locationCheck == false {
             centerMapOnLocation(initialLocation)
             locationCheck = true

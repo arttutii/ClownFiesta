@@ -7,24 +7,18 @@
 //
 
 import UIKit
-import CoreBluetooth
+import CoreLocation
 
-class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate{
+class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: Properties
     
-    var myCentralManager: CBCentralManager!
+    let asd = BeaconSingleton.sharedInstance
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
-         myCentralManager.scanForPeripheralsWithServices(nil, options: nil)
-    }
-    
-    // Start up the CBCentralManager
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        myCentralManager = CBCentralManager(delegate: self, queue:dispatch_get_main_queue())
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,14 +26,8 @@ class ViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDe
         // Dispose of any resources that can be recreated.
     }
     
-    func centralManagerDidUpdateState(central: CBCentralManager) {
-        //
-    }
-    
-    func centralManager(central: CBCentralManager, didDiscoverPeripheral peripheral: CBPeripheral, advertisementData: [String : AnyObject], RSSI: NSNumber) {
-        // When beacons are found
-        print(peripheral)
-        print(RSSI)        
+    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
+        print(beacons)
         
     }
     
