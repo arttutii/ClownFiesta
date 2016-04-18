@@ -9,16 +9,25 @@
 import UIKit
 import CoreLocation
 
+
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: Properties
+    let locationManager = CLLocationManager()
     
-    let asd = BeaconSingleton.sharedInstance
-    
+    let rangingRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "Beacons")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        
+        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
+            locationManager.requestWhenInUseAuthorization()
+        }
+        locationManager.startRangingBeaconsInRegion(rangingRegion)
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -27,7 +36,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        print(beacons)
+        var beaconCount: Int = 0
+        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
+        
+        if beaconCount <= beacons.count {
+            beaconCount = beacons.count
+        }
+        
+        
+        
         
     }
     
