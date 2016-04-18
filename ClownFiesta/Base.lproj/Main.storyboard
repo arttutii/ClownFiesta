@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -47,7 +47,7 @@
                                     <fragment content="User">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="30" name="AmericanTypewriter-Bold"/>
+                                            <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
@@ -125,6 +125,11 @@
                     <view key="view" contentMode="scaleToFill" id="tyR-GY-EAu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="E1y-mN-uhp">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="User" id="44x-4i-nIb">
@@ -197,6 +202,11 @@
                     <view key="view" contentMode="scaleToFill" id="0f3-Bx-o4B">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PurpleAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="srA-Ug-FtN">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Leaderboard" id="Npq-PQ-yGC">
@@ -352,6 +362,9 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4I-RT-R79">
                                 <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YellowAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="tYJ-eo-vRx">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELLOOOOOO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGp-Ne-zVE">
                                         <rect key="frame" x="38" y="31" width="205" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -381,6 +394,11 @@
                     <view key="view" contentMode="scaleToFill" id="Teu-I7-cbw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BlueAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Rsv-xG-9Wo">
+                                <rect key="frame" x="0.0" y="58" width="320" height="510"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Team" id="kkI-t6-1eD">
@@ -403,9 +421,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GreenAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="2KL-cn-Ejb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Zq-c7D">
                                 <rect key="frame" x="160" y="64" width="160" height="159"/>
-                                <state key="normal" image="LargeMapIcon"/>
+                                <state key="normal" image="MapIcon100"/>
                                 <connections>
                                     <segue destination="IeS-EL-5Vj" kind="push" id="sVR-1O-ar3"/>
                                 </connections>
@@ -424,31 +445,51 @@
                                     <segue destination="huz-Yc-J6H" kind="push" id="8Ly-j9-uBO"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Leaderboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGs-uw-Lu4">
-                                <rect key="frame" x="32" y="174" width="98" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99t-Af-pBG">
+                                <rect key="frame" x="166" y="191" width="154" height="35"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Map">
+                                        <attributes>
+                                            <color key="NSColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99t-Af-pBG">
-                                <rect key="frame" x="223" y="174" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1u-1q-QXO">
                                 <rect key="frame" x="5" y="395" width="320" height="120"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Game Modes">
                                         <attributes>
-                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.80000000000000004" colorSpace="calibratedRGB"/>
-                                            <color key="NSColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="30" name="HelveticaNeue-Bold"/>
+                                            <color key="NSBackgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="NSColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGs-uw-Lu4">
+                                <rect key="frame" x="0.0" y="184" width="158" height="49"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Leaderboard">
+                                        <attributes>
+                                            <color key="NSColor" red="0.9960784912109375" green="0.99215692281723022" blue="0.99215692281723022" alpha="1" colorSpace="deviceRGB"/>
+                                            <font key="NSFont" size="23" name="AmericanTypewriter-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="2"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -467,18 +508,23 @@
     </scenes>
     <resources>
         <image name="AppBackground" width="360" height="540"/>
+        <image name="BlueAppBackground" width="360" height="540"/>
         <image name="ClueIcon" width="25" height="25"/>
         <image name="FiestaBackground" width="640" height="720"/>
+        <image name="GreenAppBackground" width="360" height="540"/>
         <image name="HuntIcon" width="640" height="720"/>
-        <image name="LargeMapIcon" width="50" height="50"/>
         <image name="LargeMaracas" width="259" height="307"/>
         <image name="LargeTeamIcon" width="100" height="100"/>
-        <image name="LargeTrophyIcon" width="50" height="50"/>
+        <image name="LargeTrophyIcon" width="100" height="100"/>
         <image name="LargeUserIcon" width="100" height="100"/>
         <image name="Logo" width="640" height="360"/>
         <image name="MapIcon" width="25" height="25"/>
+        <image name="MapIcon100" width="100" height="100"/>
+        <image name="PurpleAppBackground" width="360" height="540"/>
+        <image name="RedAppBackground" width="360" height="540"/>
+        <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cQL-y5-5gs"/>
+        <segue reference="sVR-1O-ar3"/>
     </inferredMetricsTieBreakers>
 </document>

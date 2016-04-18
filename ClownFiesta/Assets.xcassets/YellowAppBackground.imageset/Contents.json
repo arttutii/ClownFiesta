@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Trophy-100.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "YellowAppBackground70%.jpg",
       "scale" : "2x"
     },
     {
