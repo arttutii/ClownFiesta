@@ -10,37 +10,20 @@ import UIKit
 import CoreLocation
 
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController {
     
     // MARK: Properties
-    let locationManager = CLLocationManager()
     
-    let rangingRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "Beacons")
+    let detector:BeaconDetective = detectorSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        
-        if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
-            locationManager.requestWhenInUseAuthorization()
-        }
-        locationManager.startRangingBeaconsInRegion(rangingRegion)
-
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
-        let closestBeacon = knownBeacons[0] as CLBeacon
-        
-        print(beacons)
-        
     }
     
 }
