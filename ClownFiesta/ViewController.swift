@@ -36,15 +36,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        var beaconCount: Int = 0
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
+        let closestBeacon = knownBeacons[0] as CLBeacon
         
-        if beaconCount <= beacons.count {
-            beaconCount = beacons.count
-        }
-        
-        
-        
+        print(beacons)
         
     }
     
