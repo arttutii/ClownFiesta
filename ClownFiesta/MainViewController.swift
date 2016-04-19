@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
     // MARK: Properties
     
