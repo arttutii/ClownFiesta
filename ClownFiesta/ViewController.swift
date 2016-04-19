@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     // MARK: Properties
     
-    let detector:BeaconDetective = detectorSingleton
+    //let detector:BeaconDetective = detectorSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()

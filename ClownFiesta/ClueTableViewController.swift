@@ -11,8 +11,8 @@ import UIKit
 class ClueTableViewController: UITableViewController {
     
     // MARK: Properties
-    var clues = [Clue]()
     var clueCount: Int = 1
+    var games = [Game]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,6 @@ class ClueTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadClues()
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,23 +36,18 @@ class ClueTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return clues.count
+        return games.count
     }
     
-    func loadClues() {
-        
-        let clue1 = Clue(ClueDescription: "In a galaxy far, far away..")
-        let clue2 = Clue(ClueDescription: "Behind you")
-        
-        clues += [clue1, clue2]
-    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "ClueTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
-        let clue = clues[indexPath.row]
+        let clue = games[0]
         
-        cell.clueLabel.text = "Clue #\(clueCount)"
+        cell.clueLabel.text = clue.GameClues[indexPath.row].ClueDescription  //"Clue #\(clueCount)"
+        
+        print("hello", clue.GameClues[indexPath.row].ClueDescription)
         clueCount += 1
     
         return cell

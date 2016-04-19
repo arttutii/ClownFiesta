@@ -217,7 +217,7 @@
                                 <connections>
                                     <outlet property="gameDescription" destination="jRp-MM-Pxv" id="zSl-Z5-2f3"/>
                                     <outlet property="gameLabel" destination="2Q8-q6-5cv" id="35g-Xo-itB"/>
-                                    <segue destination="16m-OR-yMZ" kind="push" id="Raq-xI-I96"/>
+                                    <segue destination="16m-OR-yMZ" kind="push" id="abr-3w-KCB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -588,6 +588,6 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVR-1O-ar3"/>
+        <segue reference="cQL-y5-5gs"/>
     </inferredMetricsTieBreakers>
 </document>

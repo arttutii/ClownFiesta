@@ -6,13 +6,16 @@
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
+
 import UIKit
+
 
 class GameTableViewController: UITableViewController {
     
     // MARK: Properties
     var games = [Game]()
-
+    var clues = [Clue]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,8 +47,20 @@ class GameTableViewController: UITableViewController {
         let game1 = Game(GameName: "Fiesta", GameClues: [], GameLocation: "Helsinki", GameDescription: "Fun Times!")
         let game2 = Game(GameName: "Clown", GameClues: [], GameLocation: "Helsinki", GameDescription: "Clown Around!")
         
+        game1.loadClues([
+            Clue(des: "Hello"),
+            Clue(des: "Wow")
+            ])
+        
+        game2.loadClues([
+            Clue(des: "Oh my"),
+            Clue(des: "Is it me you're looking for?")
+            ])
+        print(String(game1.GameClues))
+        print(String(game2.GameClues))
         games += [game1, game2]
     }
+    
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GameTableViewCell"
@@ -93,14 +108,13 @@ class GameTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
     */
-
 }
