@@ -47,7 +47,8 @@ class ClueTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
         
         //let clue = gameMode.currentGameMode?.gameClues[indexPath.row]
-        cell.clueLabel.text = "Clue #\(clueCount)"        
+        cell.clueLabel.text = "Clue #\(clueCount)"
+        
         clueCount += 1
     
         return cell

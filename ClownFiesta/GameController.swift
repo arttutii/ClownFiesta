@@ -18,7 +18,7 @@ class GameController {
     var appMap: Map
     
     private init (){
-        appMap = Map(currentLatitude: appMap.currentLatitude, currentLongitude: 0.0)
+        appMap = Map(currentLatitude: 0.0, currentLongitude: 0.0)
     }
     
     func loadClues(GameMode: Game, Clues: [Clue]) {
