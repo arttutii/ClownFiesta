@@ -14,16 +14,18 @@ class ClueController: UIViewController {
     let gameMode: GameController = gameSingleton
     
     @IBOutlet weak var clueLocation: UILabel!
-    @IBOutlet weak var clueDescription: UILabel!
-    
+    @IBOutlet weak var clueText: UITextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        //View Background
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "YellowAppBackground")!)
+        
         
         clueLocation.text = gameMode.currentGameMode?.gameLocation
-        clueDescription.text = gameMode.currentClue?.ClueDescription
+        clueText.text = gameMode.currentClue?.ClueDescription
         
     }
 

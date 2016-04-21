@@ -23,6 +23,8 @@ class GameTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "PurpleAppBackground"))
         gameMode.loadGameModes()
     }
 
@@ -56,6 +58,10 @@ class GameTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         gameMode.currentGameMode = gameMode.games[indexPath.row]
+    }
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
     }
 
     /*

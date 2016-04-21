@@ -22,6 +22,8 @@ class ClueTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.backgroundView = UIImageView(image: UIImage(named: "BlueAppBackground"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +46,8 @@ class ClueTableViewController: UITableViewController {
         let cellIdentifier = "ClueTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
         
-        let clue = gameMode.currentGameMode?.gameClues[indexPath.row]
-        cell.clueLabel.text = clue?.ClueDescription  //"Clue #\(clueCount)"
+        //let clue = gameMode.currentGameMode?.gameClues[indexPath.row]
+        cell.clueLabel.text = "Clue #\(clueCount)"
         
         clueCount += 1
     
@@ -57,16 +59,11 @@ class ClueTableViewController: UITableViewController {
         
         gameMode.currentClue = gameMode.currentGameMode?.gameClues[indexPath.row]
     }
-
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.backgroundColor = UIColor.clearColor()
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
