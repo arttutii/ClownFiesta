@@ -15,8 +15,6 @@ class Game {
     var gameLocation: String?
     var gameDescription: String?
     
-    
-    
     init(GameName: String, GameClues: [Clue], GameLocation: String, GameDescription: String) {
         self.gameName = GameName
         self.gameClues = GameClues

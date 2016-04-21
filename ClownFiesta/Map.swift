@@ -12,18 +12,42 @@ import CoreLocation
 import MapKit
 
 
-class Map{
+class Map: NSObject, CLLocationManagerDelegate{
     // MARK: Properties
 
     let locationManager = CLLocationManager()
     var currentLatitude: Double = 0.0
     var currentLongitude: Double = 0.0
-    
     let regionRadius: CLLocationDistance = 1000
     
-    init() {
-    self.currentLongitude = 0.0
-    self.currentLatitude = 0.0
+    init(currentLatitude: Double,currentLongitude: Double) {
+        self.currentLongitude = currentLongitude
+        self.currentLatitude = currentLatitude
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        self.currentLatitude = locValue.latitude
+        self.currentLongitude = locValue.longitude
+    }
+    
+    func askAuthorization() {
+        // Ask for Authorization from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
 
     /* Keep for later development (unused method)
