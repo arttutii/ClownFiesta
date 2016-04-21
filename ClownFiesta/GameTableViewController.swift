@@ -13,8 +13,7 @@ import UIKit
 class GameTableViewController: UITableViewController {
     
     // MARK: Properties
-    var games = [Game]()
-    var clues = [Clue]()
+    let gameMode: GameController = gameSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +23,7 @@ class GameTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadGameModes()
+        gameMode.loadGameModes()
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,38 +38,24 @@ class GameTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return gameMode.games.count
     }
     
-    func loadGameModes() {
-    
-        let game1 = Game(GameName: "Fiesta", GameClues: [], GameLocation: "Helsinki", GameDescription: "Fun Times!")
-        let game2 = Game(GameName: "Clown", GameClues: [], GameLocation: "Helsinki", GameDescription: "Clown Around!")
-        
-        game1.loadClues([
-            Clue(des: "Hello"),
-            Clue(des: "Wow")
-            ])
-        
-        game2.loadClues([
-            Clue(des: "Oh my"),
-            Clue(des: "Is it me you're looking for?")
-            ])
-        print(String(game1.GameClues))
-        print(String(game2.GameClues))
-        games += [game1, game2]
-    }
-    
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "GameTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! GameTableViewCell
-        let game = games[indexPath.row]
+        let game = gameMode.games[indexPath.row]
         
-        cell.gameLabel.text = game.GameName
-        cell.gameDescription.text = game.GameDescription
+        cell.gameLabel.text = game.gameName
+        cell.gameDescription.text = game.gameDescription
         
         return cell
+    }
+    
+    // Set the current game mode and pass it for the next View controller
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        gameMode.currentGameMode = gameMode.games[indexPath.row]
     }
 
     /*

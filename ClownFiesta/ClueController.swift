@@ -9,16 +9,33 @@
 import UIKit
 
 class ClueController: UIViewController {
+    
+    // MARK: Properties
+    let gameMode: GameController = gameSingleton
+    
+    @IBOutlet weak var clueLocation: UILabel!
+    @IBOutlet weak var clueDescription: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        clueLocation.text = gameMode.currentGameMode?.gameLocation
+        clueDescription.text = gameMode.currentClue?.ClueDescription
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func unlockHintOnMap(sender: AnyObject) {
+        
     }
     
 

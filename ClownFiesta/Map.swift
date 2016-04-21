@@ -17,12 +17,12 @@ class Map{
 
     let locationManager = CLLocationManager()
     var currentLatitude: Double = 0.0
-    var currentLongtitude: Double = 0.0
+    var currentLongitude: Double = 0.0
     
     let regionRadius: CLLocationDistance = 1000
     
     init() {
-    self.currentLongtitude = 0.0
+    self.currentLongitude = 0.0
     self.currentLatitude = 0.0
     }
 

@@ -12,7 +12,7 @@ class ClueTableViewController: UITableViewController {
     
     // MARK: Properties
     var clueCount: Int = 1
-    var games = [Game]()
+    let gameMode: GameController = gameSingleton
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,21 +36,26 @@ class ClueTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return gameMode.currentGameMode!.gameClues.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "ClueTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
-        let clue = games[0]
         
-        cell.clueLabel.text = clue.GameClues[indexPath.row].ClueDescription  //"Clue #\(clueCount)"
+        let clue = gameMode.currentGameMode?.gameClues[indexPath.row]
+        cell.clueLabel.text = clue?.ClueDescription  //"Clue #\(clueCount)"
         
-        print("hello", clue.GameClues[indexPath.row].ClueDescription)
         clueCount += 1
     
         return cell
+    }
+    
+    // Set the current game mode and pass it for the next View controller
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        gameMode.currentClue = gameMode.currentGameMode?.gameClues[indexPath.row]
     }
 
     /*

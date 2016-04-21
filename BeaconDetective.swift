@@ -29,7 +29,6 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate{
 
     }
     
-    
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
        

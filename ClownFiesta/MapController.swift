@@ -49,8 +49,8 @@ class MapController: UIViewController, CLLocationManagerDelegate{
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         AppMap.currentLatitude = locValue.latitude
-        AppMap.currentLongtitude = locValue.longitude
-        let initialLocation = CLLocation(latitude: AppMap.currentLatitude, longitude: AppMap.currentLongtitude)
+        AppMap.currentLongitude = locValue.longitude
+        let initialLocation = CLLocation(latitude: AppMap.currentLatitude, longitude: AppMap.currentLongitude)
         
         //Check if location is Initial and center only once
         if locationCheck == false {

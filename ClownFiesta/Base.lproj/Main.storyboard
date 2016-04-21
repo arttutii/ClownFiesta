@@ -329,7 +329,7 @@
             </objects>
             <point key="canvasLocation" x="228" y="366"/>
         </scene>
-        <!--Clues-->
+        <!--Clues in your area-->
         <scene sceneID="Z1a-Dh-rgf">
             <objects>
                 <tableViewController id="08C-eH-SrP" customClass="ClueTableViewController" customModule="ClownFiesta" sceneMemberID="viewController">
@@ -365,7 +365,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Clues" image="ClueIcon" selectedImage="ClueIcon" id="Roj-eq-WoA"/>
-                    <navigationItem key="navigationItem" title="Clues" id="GdL-zJ-zU8"/>
+                    <navigationItem key="navigationItem" title="Clues in your area" id="GdL-zJ-zU8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -390,10 +390,10 @@
             </objects>
             <point key="canvasLocation" x="2199" y="1438"/>
         </scene>
-        <!--View Controller-->
+        <!--Clue Controller-->
         <scene sceneID="hXX-eL-FW2">
             <objects>
-                <viewController id="uJs-Y5-xmH" sceneMemberID="viewController">
+                <viewController id="uJs-Y5-xmH" customClass="ClueController" customModule="ClownFiesta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wtK-00-waq"/>
                         <viewControllerLayoutGuide type="bottom" id="uB3-jp-g9f"/>
@@ -408,12 +408,25 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="YellowAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="tYJ-eo-vRx">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELLOOOOOO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGp-Ne-zVE">
-                                        <rect key="frame" x="38" y="31" width="205" height="79"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGp-Ne-zVE">
+                                        <rect key="frame" x="44" y="162" width="243" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clue general location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-PA-p3T">
+                                        <rect key="frame" x="44" y="22" width="230" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXf-mw-1C1">
+                                        <rect key="frame" x="56" y="347" width="219" height="86"/>
+                                        <state key="normal" title="Unlock hint on Map"/>
+                                        <connections>
+                                            <action selector="unlockHintOnMap:" destination="uJs-Y5-xmH" eventType="touchUpInside" id="RX0-UE-dJ5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -421,6 +434,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="sqp-Vc-iC4"/>
+                    <connections>
+                        <outlet property="clueDescription" destination="KGp-Ne-zVE" id="cRz-7O-yKS"/>
+                        <outlet property="clueLocation" destination="9qY-PA-p3T" id="NOE-wO-zI4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfs-eP-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -487,21 +504,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GreenAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="2KL-cn-Ejb">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Zq-c7D">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKN-Zq-c7D" userLabel="Map">
                                 <rect key="frame" x="160" y="64" width="160" height="159"/>
                                 <state key="normal" image="MapIcon100"/>
                                 <connections>
                                     <segue destination="IeS-EL-5Vj" kind="push" id="sVR-1O-ar3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-0a-zvn">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0s-0a-zvn" userLabel="LeaderBoard">
                                 <rect key="frame" x="5" y="64" width="153" height="159"/>
                                 <state key="normal" image="LargeTrophyIcon"/>
                                 <connections>
                                     <segue destination="Z7s-XR-iCe" kind="push" id="C96-bl-bB8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-ZV-afS">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-ZV-afS" userLabel="GameModes">
                                 <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                                 <state key="normal" image="LargeMaracas"/>
                                 <connections>
@@ -588,6 +605,6 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cQL-y5-5gs"/>
+        <segue reference="sVR-1O-ar3"/>
     </inferredMetricsTieBreakers>
 </document>
