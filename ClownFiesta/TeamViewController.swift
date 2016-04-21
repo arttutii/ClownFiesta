@@ -1,8 +1,8 @@
 //
-//  ViewController.swift
+//  TeamViewController.swift
 //  ClownFiesta
 //
-//  Created by iosdev on 5.4.2016.
+//  Created by iosdev on 21.4.2016.
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 
-class MainViewController: UIViewController {
+class TeamViewController: UIViewController {
     
     // MARK: Properties
     
@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         //Background of View
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "AppBackground")!)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "BlueAppBackground")!)
     }
     
     override func didReceiveMemoryWarning() {

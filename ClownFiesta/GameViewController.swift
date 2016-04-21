@@ -17,6 +17,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Background of View
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "GreenAppBackground")!)
     }
     
     override func didReceiveMemoryWarning() {
