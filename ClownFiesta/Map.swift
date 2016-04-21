@@ -22,8 +22,20 @@ class Map{
     let regionRadius: CLLocationDistance = 1000
     
     init() {
-    self.currentLongitude = 0.0
-    self.currentLatitude = 0.0
+        self.currentLongitude = 0.0
+        self.currentLatitude = 0.0
+    }
+    
+    func placeMarker() {
+        
+        let coordinate = CLLocationCoordinate2DMake(currentLatitude, currentLongitude)
+        
+        let placemark : MKPlacemark = MKPlacemark(coordinate: coordinate, addressDictionary:nil)
+        
+        let mapItem:MKMapItem = MKMapItem(placemark: placemark)
+        
+        mapItem.name = "Hint Location"
+        
     }
 
     /* Keep for later development (unused method)

@@ -36,6 +36,7 @@ class MapController: UIViewController, CLLocationManagerDelegate{
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
     }
     
     // Set the mapview's visible area
