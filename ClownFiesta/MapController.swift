@@ -7,59 +7,39 @@
 //
 
 import UIKit
-
 import CoreLocation
 import MapKit
 
-class MapController: UIViewController, CLLocationManagerDelegate{
+class MapController: UIViewController{
     
     // MARK: Properties
-    let AppMap =  Map()
-    let locationManager = CLLocationManager()
-    let regionRadius: CLLocationDistance = 1000
-    
+    let gameMode: GameController = gameSingleton
     var locationCheck: Bool = false
-   
+    
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
-         super.viewDidLoad()
+        super.viewDidLoad()
         
-        // Ask for Authorisation from the User.
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
+        gameMode.appMap.askAuthorization()
+        let initialLocation = CLLocation(latitude: gameMode.appMap.currentLatitude, longitude: gameMode.appMap.currentLongitude)
+
+        //Check if location is Initial and center only once
+        if locationCheck == false {
+            self.centerMapOnLocation(initialLocation)
+            locationCheck = true
+        } else {
+            // Do nothing
         }
         
     }
     
     // Set the mapview's visible area
     func centerMapOnLocation(location: CLLocation) {
+        let regionRadius = gameMode.appMap.regionRadius
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
             regionRadius * 2.0, regionRadius * 2.0)
         mapView.setRegion(coordinateRegion, animated: true)
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
-        AppMap.currentLatitude = locValue.latitude
-        AppMap.currentLongitude = locValue.longitude
-        let initialLocation = CLLocation(latitude: AppMap.currentLatitude, longitude: AppMap.currentLongitude)
-        
-        //Check if location is Initial and center only once
-        if locationCheck == false {
-            centerMapOnLocation(initialLocation)
-            locationCheck = true
-        } else {
-            // Do nothing
-        }
     }
     
 }

@@ -12,13 +12,12 @@ import CoreLocation
 import MapKit
 
 
-class Map{
+class Map: NSObject, CLLocationManagerDelegate{
     // MARK: Properties
 
     let locationManager = CLLocationManager()
     var currentLatitude: Double = 0.0
     var currentLongitude: Double = 0.0
-    
     let regionRadius: CLLocationDistance = 1000
     
     init() {
