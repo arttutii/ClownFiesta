@@ -14,6 +14,9 @@ class ClueFoundViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Background of View
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "YellowAppBackground")!)
     }
 
     override func didReceiveMemoryWarning() {
