@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import MapKit
 
-class Map{
+class Map {
     // MARK: Properties
     
     let locationManager = CLLocationManager()

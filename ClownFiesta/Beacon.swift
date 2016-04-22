@@ -8,8 +8,8 @@
 
 import Foundation
 
-class Beacon{
-    // MARK: Properties
+class Beacon {
+    
     let beaconMinorValue: Int
     let beaconMajorValue: Int
 

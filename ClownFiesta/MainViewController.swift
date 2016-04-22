@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, BeaconProtocol {
     
     // MARK: Properties
     
@@ -25,6 +25,14 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
 }

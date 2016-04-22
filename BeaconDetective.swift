@@ -11,9 +11,10 @@ import CoreLocation
 
 let detectorSingleton = BeaconDetective()
 
-class BeaconDetective:NSObject, CLLocationManagerDelegate{
+class BeaconDetective:NSObject, CLLocationManagerDelegate {
     
     // MARK: Properties
+    var observerViews = [BeaconProtocol]()
     let gameMode: GameController = gameSingleton
     let locationManager = CLLocationManager()
     let rangingRegion = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "00000000-0000-0000-0000-000000000000")!, identifier: "Beacons")
@@ -23,7 +24,6 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate{
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
         }
-        
         locationManager.delegate = self
         locationManager.startRangingBeaconsInRegion(rangingRegion)
 
@@ -35,15 +35,24 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate{
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
             if closestBeacon.proximity.rawValue <= 1 {
-                print(closestBeacon)
-                if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMajor &&
-                   closestBeacon.major.integerValue == gameMode.currentClue?.beaconMinor {
+                print("Closest beacon: ", closestBeacon)
+                if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMinor &&
+                   closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {
                     // confirm clue as Located & mark the clue as Found
+                    gameMode.currentClue?.clueFound = true
+                    notifyObserverViews()
                 }
             } else {
                 // hello
             }
             
+        }
+    }
+    
+    // Go through the array of observer ViewControllers and call their notify method
+    func notifyObserverViews() {
+        for i in observerViews {
+            i.notifyObserver()
         }
     }
     

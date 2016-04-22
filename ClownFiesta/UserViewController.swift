@@ -9,9 +9,10 @@
 import UIKit
 import CoreLocation
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, BeaconProtocol {
     
     // MARK: Properties
+    let detector:BeaconDetective = detectorSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,4 +26,11 @@ class UserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
+    }
 }

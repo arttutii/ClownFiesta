@@ -8,10 +8,11 @@
 
 import UIKit
 
-class GameTableViewController: UITableViewController {
+class GameTableViewController: UITableViewController, BeaconProtocol {
     
     // MARK: Properties
     let gameMode: GameController = gameSingleton
+    let detector: BeaconDetective = detectorSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,6 @@ class GameTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "PurpleAppBackground"))
-        gameMode.loadGameModes()
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +60,14 @@ class GameTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
+    }
+    
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
 
     /*

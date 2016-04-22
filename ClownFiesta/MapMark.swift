@@ -10,6 +10,7 @@ import Foundation
 import MapKit
 
 class MapMark: NSObject, MKAnnotation {
+    
     let title: String?
     let coordinate: CLLocationCoordinate2D
     

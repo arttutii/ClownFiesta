@@ -9,11 +9,10 @@
 import UIKit
 import CoreLocation
 
-class TeamViewController: UIViewController {
+class TeamViewController: UIViewController, BeaconProtocol {
     
     // MARK: Properties
-    
-    //let detector:BeaconDetective = detectorSingleton
+    let detector:BeaconDetective = detectorSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +26,11 @@ class TeamViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
+    }
 }
