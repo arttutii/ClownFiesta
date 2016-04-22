@@ -10,13 +10,19 @@ import Foundation
 
 class Clue {
 
-    var ClueDescription: String
-    var ClueStart: NSDate
-    var ClueEnd: NSDate
+    var clueDescription: String
+    var beaconMinor: Int
+    var beaconMajor: Int
+    var clueFound: Bool
+    var clueStart: NSDate
+    var clueEnd: NSDate
     
-    init(des: String) {
-        self.ClueDescription = des
-        self.ClueStart = NSDate()
-        self.ClueEnd = NSDate()
+    init(des: String, bMinor: Int, bMajor: Int) {
+        self.clueDescription = des
+        self.beaconMajor = bMajor
+        self.beaconMinor = bMinor
+        self.clueStart = NSDate()
+        self.clueEnd = NSDate()
+        self.clueFound = false
     }
 }

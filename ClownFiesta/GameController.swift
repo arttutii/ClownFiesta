@@ -15,10 +15,9 @@ class GameController {
     var games = [Game]()
     var currentGameMode: Game?
     var currentClue: Clue?
-    var appMap: Map
     
     private init (){
-        appMap = Map(currentLatitude: 0.0, currentLongitude: 0.0)
+        
     }
     
     func loadClues(GameMode: Game, Clues: [Clue]) {
@@ -32,13 +31,13 @@ class GameController {
         let game2 = Game(GameName: "Clown", GameClues: [], GameLocation: "Helsinki", GameDescription: "Clown Around!")
         
         loadClues(game1, Clues: [
-            Clue(des: "Hello"),
-            Clue(des: "Wow")
+            Clue(des: "Hello", bMinor: 0, bMajor: 0 ),
+            Clue(des: "Wow", bMinor: 97, bMajor: 97 )
             ])
         
         loadClues(game2, Clues: [
-            Clue(des: "Oh my"),
-            Clue(des: "Is it me you're looking for?")
+            Clue(des: "Oh my", bMinor: 0, bMajor: 0 ),
+            Clue(des: "Is it me you're looking for?", bMinor: 0, bMajor: 0 )
             ])
         games += [game1, game2]
     }

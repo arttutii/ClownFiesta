@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class GameViewController: UIViewController {
 
     // MARK: Properties
@@ -25,6 +24,5 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.s
     }
-    
     
 }
