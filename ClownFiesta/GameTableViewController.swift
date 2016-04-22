@@ -6,9 +6,7 @@
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
-
 import UIKit
-
 
 class GameTableViewController: UITableViewController {
     

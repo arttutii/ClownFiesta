@@ -9,7 +9,6 @@
 import UIKit
 import CoreLocation
 
-
 class TeamViewController: UIViewController {
     
     // MARK: Properties

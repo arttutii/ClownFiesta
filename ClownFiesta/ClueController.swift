@@ -21,11 +21,10 @@ class ClueController: UIViewController {
 
         // Do any additional setup after loading the view.
         //View Background
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "YellowAppBackground")!)
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
         clueLocation.text = gameMode.currentGameMode?.gameLocation
-        clueText.text = gameMode.currentClue?.ClueDescription
+        clueText.text = gameMode.currentClue?.clueDescription
         
     }
 
@@ -34,13 +33,15 @@ class ClueController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    // TBD FUNCTION --- Mark the clueFound as true and change view according to that
+    
     // MARK: Actions
     
     @IBAction func unlockHintOnMap(sender: AnyObject) {
         
     }
     
-
     /*
     // MARK: - Navigation
 
