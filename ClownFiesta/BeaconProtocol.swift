@@ -8,6 +8,9 @@
 
 import Foundation
 
+// Observer pattern for notifying views when a beacon is found
+
 protocol BeaconProtocol {
     func registerAsObserver()
+    func notifyObserver()
 }

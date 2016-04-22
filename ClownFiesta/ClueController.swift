@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ClueController: UIViewController {
+class ClueController: UIViewController, BeaconProtocol {
     
     // MARK: Properties
-    let gameMode: GameController = gameSingleton
+    
+    let detector:BeaconDetective = detectorSingleton
     
     @IBOutlet weak var clueLocation: UILabel!
     @IBOutlet weak var clueText: UITextView!
@@ -23,14 +24,24 @@ class ClueController: UIViewController {
         //View Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
-        clueLocation.text = gameMode.currentGameMode?.gameLocation
-        clueText.text = gameMode.currentClue?.clueDescription
+        clueLocation.text = gameSingleton.currentGameMode?.gameLocation
+        clueText.text = gameSingleton.currentClue?.clueDescription
+        gameSingleton.currentClue?.clueFound = true
+        detector.notifyObserverViews()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
     

@@ -89,6 +89,9 @@
                         </subviews>
                     </view>
                     <navigationItem key="navigationItem" title="ClownFiesta" id="gkY-wL-rN7"/>
+                    <connections>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="jlE-qF-504"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qfJ-DK-hPc" id="6We-5s-CEz"/>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="IHG-NV-ZEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqv-ZM-p1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,6 +182,9 @@
                     <navigationItem key="navigationItem" title="User" id="44x-4i-nIb">
                         <barButtonItem key="backBarButtonItem" title="Back" id="FpA-6o-GBQ"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="uXY-Ce-tdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJw-cd-cCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -237,10 +244,13 @@
                     <navigationItem key="navigationItem" title="Game Modes" id="7b7-av-UPF">
                         <barButtonItem key="backBarButtonItem" title="Back" id="DsZ-Wy-Kug"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="W2r-Kf-twY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVb-cO-VRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2045" y="688"/>
+            <point key="canvasLocation" x="2017" y="680"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="FOJ-uL-3eH">
@@ -263,6 +273,9 @@
                     <navigationItem key="navigationItem" title="Leaderboard" id="Npq-PQ-yGC">
                         <barButtonItem key="backBarButtonItem" title="back" id="5kJ-D6-dxb"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="jjm-19-eEs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRa-Qp-MZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,7 +367,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIM-Le-Bq2">
-                                            <rect key="frame" x="32" y="1" width="281" height="53"/>
+                                            <rect key="frame" x="53" y="1" width="260" height="53"/>
                                             <attributedString key="attributedText">
                                                 <fragment content="Clue #1-6">
                                                     <attributes>
@@ -368,9 +381,13 @@
                                             <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <size key="shadowOffset" width="1" height="2"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ClueIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-8p-E3C" userLabel="foundImage">
+                                            <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="clueFoundImage" destination="rZP-8p-E3C" id="0aW-Ci-q0c"/>
                                     <outlet property="clueLabel" destination="tIM-Le-Bq2" id="BOA-Wp-0DD"/>
                                     <segue destination="uJs-Y5-xmH" kind="push" id="w2d-V9-j9e"/>
                                 </connections>
@@ -383,6 +400,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Clues" image="ClueIcon" selectedImage="ClueIcon" id="Roj-eq-WoA"/>
                     <navigationItem key="navigationItem" title="Clues" id="GdL-zJ-zU8"/>
+                    <connections>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="aUb-N3-Vjg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,6 +426,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYj-NT-U1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2199" y="1438"/>
+        </scene>
+        <!--Clue Found View Controller-->
+        <scene sceneID="4Y8-Wd-wRE">
+            <objects>
+                <viewController id="UFb-qt-uqG" customClass="ClueFoundViewController" customModule="ClownFiesta" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wrs-5j-scM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Khc-Lt-gjV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DEZ-Nj-gV7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VIx-Gy-noy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Rr-3k-esH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2941" y="153"/>
         </scene>
         <!--Clue Controller-->
         <scene sceneID="hXX-eL-FW2">
@@ -504,6 +543,7 @@
                     <connections>
                         <outlet property="clueLocation" destination="9qY-PA-p3T" id="NOE-wO-zI4"/>
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfs-eP-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -551,6 +591,9 @@
                     <navigationItem key="navigationItem" title="Team" id="kkI-t6-1eD">
                         <barButtonItem key="backBarButtonItem" title="Back" id="wv4-ql-cf6"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="nIw-Vx-esM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-IX-MW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -646,6 +689,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="modeLabel" destination="Z1u-1q-QXO" id="XB7-2R-kMe"/>
+                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="jfY-zg-NT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-wA-E3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -672,5 +716,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sVR-1O-ar3"/>
+        <segue reference="aUb-N3-Vjg"/>
     </inferredMetricsTieBreakers>
 </document>

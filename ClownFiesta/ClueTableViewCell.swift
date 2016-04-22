@@ -11,6 +11,7 @@ import UIKit
 class ClueTableViewCell: UITableViewCell {
     
     @IBOutlet weak var clueLabel: UILabel!
+    @IBOutlet weak var clueFoundImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

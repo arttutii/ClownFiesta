@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ClueTableViewController: UITableViewController {
+class ClueTableViewController: UITableViewController, BeaconProtocol {
     
     // MARK: Properties
-    var clueCount: Int = 1
     let gameMode: GameController = gameSingleton
+    let detector = detectorSingleton
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        registerAsObserver()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,6 +30,16 @@ class ClueTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        self.tableView.reloadData()
+    }
+    
 
     // MARK: - Table view data source
 
@@ -46,9 +56,13 @@ class ClueTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
         
         //let clue = gameMode.currentGameMode?.gameClues[indexPath.row]
-        cell.clueLabel.text = "Clue #\(clueCount)"
+        cell.clueLabel.text = "Clue #\(indexPath.row + 1)"
         
-        clueCount += 1
+        if gameMode.currentGameMode?.gameClues[indexPath.row].clueFound == true {
+            cell.clueFoundImage.image = UIImage(named: "ClueFound")
+        } else {
+            cell.clueFoundImage.image = UIImage(named: "ClueNotFound")
+        }
     
         return cell
     }
