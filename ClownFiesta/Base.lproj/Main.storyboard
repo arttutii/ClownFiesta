@@ -90,7 +90,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ClownFiesta" id="gkY-wL-rN7"/>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="jlE-qF-504"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jlE-qF-504"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -111,7 +111,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="qfJ-DK-hPc" id="6We-5s-CEz"/>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="IHG-NV-ZEz"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="IHG-NV-ZEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqv-ZM-p1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -183,7 +183,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="FpA-6o-GBQ"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="uXY-Ce-tdf"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="uXY-Ce-tdf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJw-cd-cCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +245,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="DsZ-Wy-Kug"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="W2r-Kf-twY"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="W2r-Kf-twY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVb-cO-VRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,7 +274,7 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="5kJ-D6-dxb"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="jjm-19-eEs"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jjm-19-eEs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRa-Qp-MZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -401,7 +401,7 @@
                     <tabBarItem key="tabBarItem" title="Clues" image="ClueIcon" selectedImage="ClueIcon" id="Roj-eq-WoA"/>
                     <navigationItem key="navigationItem" title="Clues" id="GdL-zJ-zU8"/>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="aUb-N3-Vjg"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="aUb-N3-Vjg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -438,9 +438,40 @@
                     <view key="view" contentMode="scaleToFill" id="DEZ-Nj-gV7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6Y-Gt-wwK">
+                                <rect key="frame" x="103" y="442" width="122" height="68"/>
+                                <state key="normal" title="Back to games"/>
+                                <connections>
+                                    <action selector="backToGames:" destination="UFb-qt-uqG" eventType="touchUpInside" id="aNJ-ny-dwr"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELLO OLIVER." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeS-o2-uyG">
+                                <rect key="frame" x="100" y="88" width="120" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XLd-9L-QRl">
+                                <rect key="frame" x="40" y="200" width="240" height="234"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚🌚</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="PLEASE STYLE ME :)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hlY-Dv-Yq2">
+                                <rect key="frame" x="81" y="129" width="159" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VIx-Gy-noy"/>
+                    <connections>
+                        <segue destination="08C-eH-SrP" kind="push" identifier="backToGamesSegue" id="apM-Kh-urF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Rr-3k-esH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -543,7 +574,7 @@
                     <connections>
                         <outlet property="clueLocation" destination="9qY-PA-p3T" id="NOE-wO-zI4"/>
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfs-eP-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -592,7 +623,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="wv4-ql-cf6"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="nIw-Vx-esM"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="nIw-Vx-esM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-IX-MW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -689,7 +720,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="modeLabel" destination="Z1u-1q-QXO" id="XB7-2R-kMe"/>
-                        <segue destination="UFb-qt-uqG" kind="modal" identifier="ClueFoundSegue" id="jfY-zg-NT2"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jfY-zg-NT2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-wA-E3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -716,6 +747,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="sVR-1O-ar3"/>
-        <segue reference="aUb-N3-Vjg"/>
+        <segue reference="nIw-Vx-esM"/>
+        <segue reference="apM-Kh-urF"/>
     </inferredMetricsTieBreakers>
 </document>

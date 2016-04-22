@@ -50,7 +50,7 @@ class ClueController: UIViewController, BeaconProtocol {
     // MARK: Actions
     
     @IBAction func unlockHintOnMap(sender: AnyObject) {
-        
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
     /*

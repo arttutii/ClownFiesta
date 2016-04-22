@@ -10,10 +10,11 @@ import UIKit
 import CoreLocation
 import MapKit
 
-class MapController: UIViewController, CLLocationManagerDelegate{
+class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol {
     
     // MARK: Properties
     let AppMap =  Map()
+    let detector:BeaconDetective = detectorSingleton
     let locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
@@ -66,6 +67,14 @@ class MapController: UIViewController, CLLocationManagerDelegate{
         } else {
             // Do nothing
         }
+    }
+    
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
 }

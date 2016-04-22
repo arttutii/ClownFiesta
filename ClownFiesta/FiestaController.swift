@@ -13,6 +13,7 @@ class FiestaController: UIViewController {
 
     // MARK: Properties
     
+    let gameMode:GameController = gameSingleton
     var audioPlayer = AVAudioPlayer()
     
     @IBOutlet var fiestaImageView: UIImageView!
@@ -20,7 +21,10 @@ class FiestaController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // playBackgroundMusic()
+        // playBackgroundMusic()
+        
+        // Load the gamemodes
+        gameMode.loadGameModes()
 
     }
 

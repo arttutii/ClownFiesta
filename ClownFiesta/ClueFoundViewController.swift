@@ -21,7 +21,9 @@ class ClueFoundViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func backToGames(sender: AnyObject) {
+        performSegueWithIdentifier("backToGamesSegue", sender: self)
+    }
     /*
     // MARK: - Navigation
 

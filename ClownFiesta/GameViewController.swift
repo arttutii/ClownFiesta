@@ -8,10 +8,12 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, BeaconProtocol {
 
     // MARK: Properties
     @IBOutlet weak var modeLabel: UILabel!
+    
+    let detector:BeaconDetective = detectorSingleton
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,14 @@ class GameViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.s
+    }
+    
+    func registerAsObserver() {
+        detector.observerViews.append(self)
+    }
+    
+    func notifyObserver() {
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
 }

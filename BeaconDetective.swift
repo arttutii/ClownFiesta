@@ -11,7 +11,7 @@ import CoreLocation
 
 let detectorSingleton = BeaconDetective()
 
-class BeaconDetective:NSObject, CLLocationManagerDelegate{
+class BeaconDetective:NSObject, CLLocationManagerDelegate {
     
     // MARK: Properties
     var observerViews = [BeaconProtocol]()
@@ -24,7 +24,6 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate{
         if (CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedWhenInUse) {
             locationManager.requestWhenInUseAuthorization()
         }
-        
         locationManager.delegate = self
         locationManager.startRangingBeaconsInRegion(rangingRegion)
 
@@ -36,7 +35,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate{
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
             if closestBeacon.proximity.rawValue <= 1 {
-                print(closestBeacon)
+                print("Closest beacon: ", closestBeacon)
                 if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMinor &&
                    closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {
                     // confirm clue as Located & mark the clue as Found
@@ -50,6 +49,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate{
         }
     }
     
+    // Go through the array of observer ViewControllers and call their notify method
     func notifyObserverViews() {
         for i in observerViews {
             i.notifyObserver()
