@@ -31,7 +31,6 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    
     func registerAsObserver() {
         detector.observerViews.append(self)
     }

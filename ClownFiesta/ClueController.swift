@@ -44,9 +44,6 @@ class ClueController: UIViewController, BeaconProtocol {
         performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
-    
-    // TBD FUNCTION --- Mark the clueFound as true and change view according to that
-    
     // MARK: Actions
     
     @IBAction func unlockHintOnMap(sender: AnyObject) {
