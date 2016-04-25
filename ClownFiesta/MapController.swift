@@ -24,6 +24,7 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerAsObserver()
         
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()

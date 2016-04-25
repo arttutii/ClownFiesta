@@ -37,6 +37,7 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
     
     func notifyObserver() {
         self.tableView.reloadData()
+        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
 

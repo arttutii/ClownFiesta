@@ -39,6 +39,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
                 if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMinor &&
                    closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {
                     // confirm clue as Located & mark the clue as Found
+                    print("BEACON FOUND!!!!")
                     gameMode.currentClue?.clueFound = true
                     notifyObserverViews()
                 }

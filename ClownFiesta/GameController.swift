@@ -32,7 +32,7 @@ class GameController {
         
         loadClues(game1, Clues: [
             Clue(des: "Hello", bMinor: 0, bMajor: 0 ),
-            Clue(des: "Wow", bMinor: 97, bMajor: 97 )
+            Clue(des: "Wow", bMinor: 96, bMajor: 96 )
             ])
         
         loadClues(game2, Clues: [

@@ -12,7 +12,7 @@ class ClueFoundViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         //Background of View

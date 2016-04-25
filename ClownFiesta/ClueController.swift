@@ -19,6 +19,7 @@ class ClueController: UIViewController, BeaconProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerAsObserver()
 
         // Do any additional setup after loading the view.
         //View Background
@@ -26,8 +27,6 @@ class ClueController: UIViewController, BeaconProtocol {
         
         clueLocation.text = gameSingleton.currentGameMode?.gameLocation
         clueText.text = gameSingleton.currentClue?.clueDescription
-        gameSingleton.currentClue?.clueFound = true
-        detector.notifyObserverViews()
         
     }
 
@@ -42,6 +41,7 @@ class ClueController: UIViewController, BeaconProtocol {
     
     func notifyObserver() {
         performSegueWithIdentifier("ClueFoundSegue", sender: self)
+        print("hello")
     }
     
     // MARK: Actions

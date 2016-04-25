@@ -16,6 +16,7 @@ class TeamViewController: UIViewController, BeaconProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        registerAsObserver()
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "BlueAppBackground")!)
