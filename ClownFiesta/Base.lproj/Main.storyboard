@@ -360,7 +360,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ClueTableViewCell" rowHeight="55" id="j7i-ru-SH9" customClass="ClueTableViewCell" customModule="ClownFiesta">
-                                <rect key="frame" x="0.0" y="28" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j7i-ru-SH9" id="4XY-eh-GSx">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
@@ -382,7 +382,7 @@
                                             <size key="shadowOffset" width="1" height="2"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ClueIcon" translatesAutoresizingMaskIntoConstraints="NO" id="rZP-8p-E3C" userLabel="foundImage">
-                                            <rect key="frame" x="0.0" y="0.0" width="54" height="54"/>
+                                            <rect key="frame" x="8" y="4" width="45" height="46"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
