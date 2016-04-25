@@ -34,17 +34,17 @@ class GameController {
         
         loadClues(game1, Clues: [
             Clue(des: "Hello", bMinor: 0, bMajor: 0 , lat: 60.0, long: 24.22),
-            Clue(des: "Wow", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22 )
+            Clue(des: "Wow", bMinor: 96, bMajor: 96, lat: 60.2219863096813, long: 24.8049)
             ])
         
         loadClues(game2, Clues: [
             Clue(des: "Oh my", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22 ),
-            Clue(des: "Is it me you're looking for?", bMinor: 0, bMajor: 0 , lat: 60.0, long: 24.22)
+            Clue(des: "Is it me you're looking for?", bMinor: 0, bMajor: 0 , lat: 60.2219863096813, long: 24.8049)
             ])
         
         loadClues(game3, Clues: [
-            Clue(des: "This large church is one of the most famous landmarks in Helsinki", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
-            Clue(des: "A statue outside of an art museum", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
+            Clue(des: "This large church is one of the most famous landmarks in Helsinki", bMinor: 0, bMajor: 0,  lat: 60.2219863096813, long: 24.8049),
+            Clue(des: "A statue outside of an art museum", bMinor: 0, bMajor: 0, lat: 60.2219863096813, long: 24.8049),
             Clue(des: "A strangely shaped church", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
             Clue(des: "Stone carved depictions of Men holding globes", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22)
             ])
