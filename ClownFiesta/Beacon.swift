@@ -12,10 +12,15 @@ class Beacon {
     
     let beaconMinorValue: Int
     let beaconMajorValue: Int
+    let beaconLatitude: Double
+    let beaconLongitude: Double
 
-    init(minor: Int, major: Int) {
+    init(minor: Int, major: Int, lat: Double, long: Double) {
         self.beaconMajorValue = major
         self.beaconMinorValue = minor
+        self.beaconLatitude = lat
+        self.beaconLongitude = long
     }
+    
 
 }

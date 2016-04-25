@@ -23,7 +23,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerAsObserver()
+        //registerAsObserver()
         
         // Set delegates
         nameTextField.delegate = self

@@ -17,7 +17,7 @@ class GameViewController: UIViewController, BeaconProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerAsObserver()
+        //registerAsObserver()
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "GreenAppBackground")!)

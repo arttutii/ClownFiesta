@@ -19,7 +19,7 @@ class ClueController: UIViewController, BeaconProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerAsObserver()
+        //registerAsObserver()
 
         // Do any additional setup after loading the view.
         //View Background
@@ -45,13 +45,19 @@ class ClueController: UIViewController, BeaconProtocol {
     
     func notifyObserver() {
         performSegueWithIdentifier("ClueFoundSegue", sender: self)
-        print("hello")
     }
+    
+    func back(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("clueToClues", sender: self)
+    }
+
+    
+    // TBD FUNCTION --- Mark the clueFound as true and change view according to that
     
     // MARK: Actions
     
     @IBAction func unlockHintOnMap(sender: AnyObject) {
-        performSegueWithIdentifier("ClueFoundSegue", sender: self)
+        performSegueWithIdentifier("clueToMap", sender: self)
     }
     
     /*

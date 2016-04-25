@@ -15,6 +15,7 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
     // MARK: Properties
     let AppMap =  Map()
     let detector:BeaconDetective = detectorSingleton
+    let gameMode: GameController = gameSingleton
     let locationManager = CLLocationManager()
     let regionRadius: CLLocationDistance = 1000
     
@@ -24,7 +25,13 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerAsObserver()
+        
+        if gameMode.currentClue != nil {
+            placeMapPin("Hint Location", latitude: (gameMode.currentClue?.beaconLatitude)!, longitude: (gameMode.currentClue?.beaconLongitude)!)
+        } else {
+                //hello
+        }
+        //registerAsObserver()
         
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()

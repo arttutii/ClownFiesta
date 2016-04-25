@@ -16,7 +16,7 @@ class GameTableViewController: UITableViewController, BeaconProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        registerAsObserver()
+        //registerAsObserver()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

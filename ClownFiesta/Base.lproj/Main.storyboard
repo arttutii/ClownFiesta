@@ -106,9 +106,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" selectedImage="MapIcon" id="e0m-77-l59"/>
-                    <navigationItem key="navigationItem" title="Map" id="SqJ-XD-4gL">
-                        <barButtonItem key="backBarButtonItem" title="back" id="1Kq-LZ-xIJ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Map" id="SqJ-XD-4gL"/>
                     <connections>
                         <outlet property="mapView" destination="qfJ-DK-hPc" id="6We-5s-CEz"/>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="IHG-NV-ZEz"/>
@@ -471,7 +469,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backToGames:" destination="UFb-qt-uqG" eventType="touchUpInside" id="tZ0-I4-ptd"/>
-                                    <segue destination="08C-eH-SrP" kind="push" identifier="backToGamesSegue" id="cY4-8r-iHr"/>
+                                    <segue destination="16m-OR-yMZ" kind="push" identifier="backToGames" id="frJ-WO-l3B"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyl-Vu-P36">
@@ -559,6 +557,7 @@
                                         </state>
                                         <connections>
                                             <action selector="unlockHintOnMap:" destination="uJs-Y5-xmH" eventType="touchUpInside" id="RX0-UE-dJ5"/>
+                                            <segue destination="IeS-EL-5Vj" kind="push" identifier="clueToMap" id="bnW-j7-V9M"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYl-su-Ea0">
@@ -765,19 +764,6 @@
             </objects>
             <point key="canvasLocation" x="1568" y="704"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Thi-1k-Jkx">
-            <objects>
-                <viewController id="hV2-M0-GgS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3Nw-PI-nSc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dsg-qH-k42" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="AppBackground" width="360" height="540"/>
@@ -799,12 +785,11 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="abr-3w-KCB"/>
+        <segue reference="IHG-NV-ZEz"/>
+        <segue reference="bnW-j7-V9M"/>
+        <segue reference="vRH-Eb-NW5"/>
         <segue reference="jEY-VW-Qix"/>
         <segue reference="JPa-v9-bei"/>
         <segue reference="COK-dK-Erl"/>
-        <segue reference="cQL-y5-5gs"/>
-        <segue reference="5w5-9p-J6B"/>
-        <segue reference="uXY-Ce-tdf"/>
     </inferredMetricsTieBreakers>
 </document>

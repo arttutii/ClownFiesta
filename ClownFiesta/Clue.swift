@@ -14,15 +14,15 @@ class Clue {
     var beaconMinor: Int
     var beaconMajor: Int
     var clueFound: Bool
-    var clueStart: NSDate
-    var clueEnd: NSDate
+    let beaconLatitude: Double
+    let beaconLongitude: Double
     
-    init(des: String, bMinor: Int, bMajor: Int) {
+    init(des: String, bMinor: Int, bMajor: Int, lat: Double, long: Double) {
         self.clueDescription = des
         self.beaconMajor = bMajor
         self.beaconMinor = bMinor
-        self.clueStart = NSDate()
-        self.clueEnd = NSDate()
+        self.beaconLatitude = lat
+        self.beaconLongitude = long
         self.clueFound = false
     }
 }
