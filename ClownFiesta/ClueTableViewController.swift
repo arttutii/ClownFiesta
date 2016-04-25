@@ -39,7 +39,6 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
     func notifyObserver() {
         self.tableView.reloadData()
     }
-    
 
     // MARK: - Table view data source
 

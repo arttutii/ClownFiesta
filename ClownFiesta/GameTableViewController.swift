@@ -24,11 +24,19 @@ class GameTableViewController: UITableViewController, BeaconProtocol {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "PurpleAppBackground"))
+        
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Game Menu", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
+        self.navigationItem.leftBarButtonItem = newBackButton;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func back(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("gamesToMenu", sender: self)
     }
 
     // MARK: - Table view data source

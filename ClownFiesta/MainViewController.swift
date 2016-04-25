@@ -20,6 +20,7 @@ class MainViewController: UIViewController, BeaconProtocol {
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "AppBackground")!)
+        self.navigationItem.hidesBackButton = true
     }
     
     override func didReceiveMemoryWarning() {

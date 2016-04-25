@@ -17,6 +17,7 @@ class ClueFoundViewController: UIViewController {
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "YellowAppBackground")!)
+        navigationItem.hidesBackButton = true  
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,7 +26,7 @@ class ClueFoundViewController: UIViewController {
     }
     
     @IBAction func backToGames(sender: AnyObject) {
-        performSegueWithIdentifier("backToGamesSegue", sender: self)
+        performSegueWithIdentifier("backToGames", sender: self)
     }
     /*
     // MARK: - Navigation

@@ -56,10 +56,10 @@
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUO-QA-m3T">
-                                <rect key="frame" x="0.0" y="357" width="320" height="82"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-FZ-5Aw">
+                                <rect key="frame" x="158" y="187" width="162" height="35"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Treasure Hunt">
+                                    <fragment content="Team">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
@@ -71,10 +71,10 @@
                                 <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <size key="shadowOffset" width="1" height="2"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-FZ-5Aw">
-                                <rect key="frame" x="158" y="187" width="162" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUO-QA-m3T">
+                                <rect key="frame" x="0.0" y="357" width="320" height="82"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="Team">
+                                    <fragment content="Treasure Hunt">
                                         <attributes>
                                             <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJw-cd-cCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="14"/>
+            <point key="canvasLocation" x="1531" y="-101"/>
         </scene>
         <!--Game Modes-->
         <scene sceneID="KxZ-yK-5WG">
@@ -200,7 +200,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="GameTableViewCell" rowHeight="73" id="nG4-7a-gZr" customClass="GameTableViewCell" customModule="ClownFiesta">
-                                <rect key="frame" x="0.0" y="92" width="320" height="73"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="73"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nG4-7a-gZr" id="ZlH-gU-sXu">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="72"/>
@@ -246,11 +246,12 @@
                     </navigationItem>
                     <connections>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="W2r-Kf-twY"/>
+                        <segue destination="9iv-NM-5g2" kind="push" identifier="gamesToMenu" animates="NO" id="JPa-v9-bei"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rVb-cO-VRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2017" y="680"/>
+            <point key="canvasLocation" x="2093" y="710"/>
         </scene>
         <!--Leaderboard-->
         <scene sceneID="FOJ-uL-3eH">
@@ -360,7 +361,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ClueTableViewCell" rowHeight="55" id="j7i-ru-SH9" customClass="ClueTableViewCell" customModule="ClownFiesta">
-                                <rect key="frame" x="0.0" y="92" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="28" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j7i-ru-SH9" id="4XY-eh-GSx">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="54"/>
@@ -406,12 +407,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2635" y="918"/>
+            <point key="canvasLocation" x="2861" y="694"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="e9H-vr-Qe9">
             <objects>
-                <tabBarController id="16m-OR-yMZ" sceneMemberID="viewController">
+                <tabBarController id="16m-OR-yMZ" customClass="TabBarController" customModule="ClownFiesta" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="eNR-TM-efc"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="oLf-xB-lja">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -421,11 +422,12 @@
                     <connections>
                         <segue destination="08C-eH-SrP" kind="relationship" relationship="viewControllers" id="5w5-9p-J6B"/>
                         <segue destination="IeS-EL-5Vj" kind="relationship" relationship="viewControllers" id="cQL-y5-5gs"/>
+                        <segue destination="huz-Yc-J6H" kind="push" identifier="cluesToGames" animates="NO" id="jEY-VW-Qix"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYj-NT-U1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2199" y="1438"/>
+            <point key="canvasLocation" x="2439" y="1446"/>
         </scene>
         <!--Clue Found View Controller-->
         <scene sceneID="4Y8-Wd-wRE">
@@ -458,6 +460,7 @@
                                 </state>
                                 <connections>
                                     <action selector="backToGames:" destination="UFb-qt-uqG" eventType="touchUpInside" id="tZ0-I4-ptd"/>
+                                    <segue destination="16m-OR-yMZ" kind="push" identifier="backToGames" id="frJ-WO-l3B"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyl-Vu-P36">
@@ -494,13 +497,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VIx-Gy-noy"/>
-                    <connections>
-                        <segue destination="08C-eH-SrP" kind="push" identifier="backToGamesSegue" id="apM-Kh-urF"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Rr-3k-esH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2941" y="153"/>
+            <point key="canvasLocation" x="903" y="1446"/>
         </scene>
         <!--Clue Controller-->
         <scene sceneID="hXX-eL-FW2">
@@ -600,11 +600,12 @@
                         <outlet property="clueLocation" destination="9qY-PA-p3T" id="NOE-wO-zI4"/>
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
+                        <segue destination="16m-OR-yMZ" kind="push" identifier="clueToClues" animates="NO" id="vRH-Eb-NW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfs-eP-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3202" y="918"/>
+            <point key="canvasLocation" x="3458" y="694"/>
         </scene>
         <!--Team-->
         <scene sceneID="PXx-hX-wMv">
@@ -688,7 +689,7 @@
                                 <rect key="frame" x="0.0" y="203" width="320" height="365"/>
                                 <state key="normal" image="LargeMaracas"/>
                                 <connections>
-                                    <segue destination="huz-Yc-J6H" kind="push" id="8Ly-j9-uBO"/>
+                                    <segue destination="huz-Yc-J6H" kind="push" id="QJY-KP-2xs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99t-Af-pBG">
@@ -746,28 +747,12 @@
                     <connections>
                         <outlet property="modeLabel" destination="Z1u-1q-QXO" id="XB7-2R-kMe"/>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jfY-zg-NT2"/>
+                        <segue destination="BYZ-38-t0r" kind="push" identifier="menuToMenu" animates="NO" id="COK-dK-Erl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTX-wA-E3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1544" y="688"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Dro-Xk-Q4m">
-            <objects>
-                <viewController id="6y9-Ju-3Ba" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="0Qc-py-bwx"/>
-                        <viewControllerLayoutGuide type="bottom" id="oj5-zs-QO1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="b3w-IF-bog">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pv8-AY-5vI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="1516" y="688"/>
         </scene>
     </scenes>
     <resources>
@@ -790,8 +775,11 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="vRH-Eb-NW5"/>
+        <segue reference="jEY-VW-Qix"/>
         <segue reference="cQL-y5-5gs"/>
-        <segue reference="5w5-9p-J6B"/>
-        <segue reference="aUb-N3-Vjg"/>
+        <segue reference="JPa-v9-bei"/>
+        <segue reference="COK-dK-Erl"/>
+        <segue reference="jlE-qF-504"/>
     </inferredMetricsTieBreakers>
 </document>

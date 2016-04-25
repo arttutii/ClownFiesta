@@ -24,6 +24,10 @@ class ClueController: UIViewController, BeaconProtocol {
         //View Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Clues", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
+        self.navigationItem.leftBarButtonItem = newBackButton;
+        
         clueLocation.text = gameSingleton.currentGameMode?.gameLocation
         clueText.text = gameSingleton.currentClue?.clueDescription
         gameSingleton.currentClue?.clueFound = true
@@ -44,6 +48,10 @@ class ClueController: UIViewController, BeaconProtocol {
         performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
+    func back(sender: UIBarButtonItem) {
+        performSegueWithIdentifier("clueToClues", sender: self)
+    }
+
     
     // TBD FUNCTION --- Mark the clueFound as true and change view according to that
     
