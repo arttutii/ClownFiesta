@@ -56,6 +56,7 @@ class GameTableViewController: UITableViewController, BeaconProtocol {
         
         cell.gameLabel.text = game.gameName
         cell.gameDescription.text = game.gameDescription
+        cell.gameDescription.numberOfLines = 0
         
         return cell
     }
