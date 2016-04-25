@@ -37,6 +37,7 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
     }
     
     // Set the mapview's visible area
