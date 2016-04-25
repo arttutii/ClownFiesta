@@ -25,6 +25,10 @@ class ClueController: UIViewController, BeaconProtocol {
         //View Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Clues", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
+        self.navigationItem.leftBarButtonItem = newBackButton;
+        
         clueLocation.text = gameSingleton.currentGameMode?.gameLocation
         clueText.text = gameSingleton.currentClue?.clueDescription
         
