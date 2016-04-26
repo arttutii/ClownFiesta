@@ -19,7 +19,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
-    
+    @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         nameTextField.text = dataControl.playerName
         ageTextField.text = dataControl.playerAge
         locationTextField.text = dataControl.playerLocation
+        scoreLabel.text = dataControl.playerScore
         
     }
     
@@ -54,7 +55,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     // MARK: Actions
     
     @IBAction func saveUser(sender: AnyObject) {
-        dataControl.saveData(nameTextField.text!, age: ageTextField.text!, location: locationTextField.text!)
+        dataControl.saveData(nameTextField.text!, age: ageTextField.text!, location: locationTextField.text!, score: scoreLabel.text!)
     }
     
         
