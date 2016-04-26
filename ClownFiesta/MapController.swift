@@ -28,13 +28,11 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
         
         // NOT DONE YET, IF CHECK HAS TO BE FROM THE CLUECONTROLLER BUTTON ACTION
         if gameMode.currentClue != nil {
-            placeMapPin("Hint Location", latitude: (gameMode.currentClue?.beaconLatitude)!, longitude: (gameMode.currentClue?.beaconLongitude)!)
-        } else {
-                //hello
+            placeMapPin(gameMode.currentClue!.clueDescription, latitude: gameMode.currentClue!.beaconLatitude, longitude: gameMode.currentClue!.beaconLongitude)
         }
         //registerAsObserver()
         
-        // Ask for Authorisation from the User.
+        // Ask for Authorization from the User.
         self.locationManager.requestAlwaysAuthorization()
         
         // For use in foreground
