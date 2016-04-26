@@ -56,6 +56,22 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
         }
     }
     
+    func getAuthorization() {
+        // Ask for Authorization from the User.
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // For use in foreground
+        self.locationManager.requestWhenInUseAuthorization()
+        
+        // If authorization is granted, start the location manager
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
+    }
+    
     // Go through the array of observer ViewControllers and call their notify method
     func notifyObserverViews() {
         for i in observerViews {

@@ -32,19 +32,6 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
         }
         //registerAsObserver()
         
-        // Ask for Authorization from the User.
-        self.locationManager.requestAlwaysAuthorization()
-        
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
-        
-        // If authorization is granted, start the location manager
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
-        
     }
     
     // Set the mapview's visible area
