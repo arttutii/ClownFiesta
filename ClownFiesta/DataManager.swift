@@ -87,18 +87,10 @@ class DataManager: NSObject {
                 }
             }
             
-            //Keep for Deleting in case
+           /* //Keep for Deleting in case
             for i in result! {
                 managedContext.deleteObject(i as! NSManagedObject)
-            }
-            
-               /* player = result[0] as! Player
-                print("SWEET FREEDOM!!!", String(player.valueForKey("firstName")!))
-            
-                self.playerName = (player.valueForKey("firstName") as? String)!
-                self.playerAge = (player.valueForKey("age") as? String)!
-                self.playerLocation = (player.valueForKey("location") as? String)!
-                self.playerScore = (player.valueForKey("score") as? String)! */
+            }*/
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")

@@ -32,6 +32,14 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
         }
         //registerAsObserver()
         
+        // If authorization is granted, start the location manager
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
+        
     }
     
     // Set the mapview's visible area
