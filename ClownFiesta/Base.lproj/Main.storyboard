@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--ClownFiesta-->
@@ -436,7 +436,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TYj-NT-U1s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2981" y="710"/>
+            <point key="canvasLocation" x="2969" y="710"/>
         </scene>
         <!--Clue Found View Controller-->
         <scene sceneID="4Y8-Wd-wRE">
@@ -469,7 +469,6 @@
                                 </state>
                                 <connections>
                                     <action selector="backToGames:" destination="UFb-qt-uqG" eventType="touchUpInside" id="tZ0-I4-ptd"/>
-                                    <segue destination="16m-OR-yMZ" kind="push" identifier="backToGames" id="frJ-WO-l3B"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyl-Vu-P36">
@@ -506,6 +505,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="VIx-Gy-noy"/>
+                    <connections>
+                        <segue destination="16m-OR-yMZ" kind="push" identifier="backToGames" id="YH2-km-tXd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Rr-3k-esH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -557,7 +559,6 @@
                                         </state>
                                         <connections>
                                             <action selector="unlockHintOnMap:" destination="uJs-Y5-xmH" eventType="touchUpInside" id="RX0-UE-dJ5"/>
-                                            <segue destination="IeS-EL-5Vj" kind="push" identifier="clueToMap" id="bnW-j7-V9M"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYl-su-Ea0">
@@ -611,6 +612,7 @@
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
                         <segue destination="16m-OR-yMZ" kind="push" identifier="clueToClues" animates="NO" id="vRH-Eb-NW5"/>
+                        <segue destination="IeS-EL-5Vj" kind="push" identifier="clueToMap" id="gnt-l0-blg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sfs-eP-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -785,9 +787,9 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IHG-NV-ZEz"/>
-        <segue reference="bnW-j7-V9M"/>
         <segue reference="vRH-Eb-NW5"/>
+        <segue reference="O9M-bi-6EB"/>
+        <segue reference="gnt-l0-blg"/>
         <segue reference="jEY-VW-Qix"/>
         <segue reference="JPa-v9-bei"/>
         <segue reference="COK-dK-Erl"/>

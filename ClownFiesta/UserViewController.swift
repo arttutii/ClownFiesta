@@ -37,6 +37,23 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Player")
+        
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            player = results as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,15 +67,12 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     
     func saveData(name: String, age: String, location: String) {
         // Create the Data Context
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
         // Create data object to save into context
-        let entity =  NSEntityDescription.entityForName("Player",
-            inManagedObjectContext:managedContext)
-        let thePlayer = NSManagedObject(entity: entity!,
-            insertIntoManagedObjectContext: managedContext)
+        let entity =  NSEntityDescription.entityForName("Player", inManagedObjectContext:managedContext)
+        let thePlayer = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         // Set values for the object
         thePlayer.setValue(name, forKey: "firstName")
