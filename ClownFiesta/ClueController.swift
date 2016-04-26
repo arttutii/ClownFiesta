@@ -57,8 +57,21 @@ class ClueController: UIViewController, BeaconProtocol {
     // MARK: Actions
     
      @IBAction func unlockHintOnMap(sender: AnyObject) {
-        performSegueWithIdentifier("clueToMap", sender: self)
-    } 
+        let alertController = UIAlertController(title: "Are you sure?", message: "Revealing the clue on map reduces the points awarded from finding it.", preferredStyle: .Alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
+            // Close Alert
+        }
+        alertController.addAction(cancelAction)
+        
+        let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action:UIAlertAction!) in
+            self.performSegueWithIdentifier("clueToMap", sender: self)
+        }
+        alertController.addAction(OKAction)
+        
+        self.presentViewController(alertController, animated: true, completion:nil)
+    }
+    
     
     /*
     // MARK: - Navigation
