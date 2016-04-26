@@ -56,9 +56,9 @@ class ClueController: UIViewController, BeaconProtocol {
     
     // MARK: Actions
     
-    @IBAction func unlockHintOnMap(sender: AnyObject) {
+     @IBAction func unlockHintOnMap(sender: AnyObject) {
         performSegueWithIdentifier("clueToMap", sender: self)
-    }
+    } 
     
     /*
     // MARK: - Navigation

@@ -26,6 +26,8 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Map View Loaded")
+        
         if gameMode.currentClue != nil {
             placeMapPin("Hint Location", latitude: (gameMode.currentClue?.beaconLatitude)!, longitude: (gameMode.currentClue?.beaconLongitude)!)
         } else {
