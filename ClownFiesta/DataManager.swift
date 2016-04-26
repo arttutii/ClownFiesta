@@ -70,20 +70,35 @@ class DataManager: NSObject {
         let fetchRequest = NSFetchRequest(entityName: "Player")
         
         do {
-            let result = try managedContext.executeFetchRequest(fetchRequest)
+            let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             
-            /*//Keep for Deleting in case
-            for i in result {
+            if let res = result {
+                    if res.count == 0 {
+                        //Do Nothing
+                    } else {
+                        
+                        player = result![0] as! Player
+                        print("SWEET FREEDOM!!!", String(player.valueForKey("firstName")!))
+                        
+                        self.playerName = (player.valueForKey("firstName") as? String)!
+                        self.playerAge = (player.valueForKey("age") as? String)!
+                        self.playerLocation = (player.valueForKey("location") as? String)!
+                        self.playerScore = (player.valueForKey("score") as? String)!
+                }
+            }
+            
+            //Keep for Deleting in case
+            for i in result! {
                 managedContext.deleteObject(i as! NSManagedObject)
-            } */
+            }
             
-                player = result[0] as! Player
+               /* player = result[0] as! Player
                 print("SWEET FREEDOM!!!", String(player.valueForKey("firstName")!))
             
                 self.playerName = (player.valueForKey("firstName") as? String)!
                 self.playerAge = (player.valueForKey("age") as? String)!
                 self.playerLocation = (player.valueForKey("location") as? String)!
-                self.playerScore = (player.valueForKey("score") as? String)!
+                self.playerScore = (player.valueForKey("score") as? String)! */
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
