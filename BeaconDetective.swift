@@ -44,7 +44,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
                     print("BEACON FOUND!!!!")
                     if gameMode.currentClue?.clueFound == false {
                         gameMode.currentClue?.clueFound = true
-                        dataControl.saveGame((gameMode.currentGameMode?.gameName)!, clueFound: (gameMode.currentGameMode?.gameClues[gameMode.currentClueInt!].clueFound)!, clueInt: (gameMode.currentClueInt)!)
+                        dataControl.saveGame((gameMode.currentGameMode?.gameName)!, clueFound: (gameMode.currentGameMode?.gameClues[gameMode.currentClueInt!].clueFound)!, clueInt: (gameMode.currentClueInt)!, clueScore: (gameMode.currentClue?.clueScore)! )
                         
                         notifyObserverViews()
                     } else {

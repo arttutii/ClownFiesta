@@ -17,5 +17,6 @@ extension SavedGame {
     @NSManaged var savedGameName: String?
     @NSManaged var clueFound: NSNumber?
     @NSManaged var clueInt: NSNumber?
+    @NSManaged var clueScore: NSNumber?
 
 }

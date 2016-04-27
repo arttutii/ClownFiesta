@@ -100,7 +100,7 @@ class DataManager: NSObject {
         }
     }
     
-    func saveGame(gameName: String, clueFound: Bool, clueInt: Int) {
+    func saveGame(gameName: String, clueFound: Bool, clueInt: Int, clueScore: Int) {
         // Create the Data Context
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -113,6 +113,7 @@ class DataManager: NSObject {
         game.setValue(gameName, forKey: "savedGameName")
         game.setValue(clueFound, forKey: "clueFound")
         game.setValue(clueInt, forKey: "clueInt")
+        game.setValue(clueScore, forKey: "clueScore")
         
         // Save data
         do {
