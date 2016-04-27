@@ -13,8 +13,8 @@ class Clue {
     var clueDescription: String
     var beaconMinor: Int
     var beaconMajor: Int
-    var clueFound: Bool
     var clueScore: Int
+    var clueFound: Bool
     let beaconLatitude: Double
     let beaconLongitude: Double
     
@@ -24,7 +24,7 @@ class Clue {
         self.beaconMinor = bMinor
         self.beaconLatitude = lat
         self.beaconLongitude = long
-        self.clueFound = false
         self.clueScore = 50
+        self.clueFound = false
     }
 }

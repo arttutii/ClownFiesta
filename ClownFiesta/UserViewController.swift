@@ -43,7 +43,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         nameTextField.text = dataControl.playerName
         ageTextField.text = dataControl.playerAge
         locationTextField.text = dataControl.playerLocation
-        scoreLabel.text = dataControl.playerScore
+        scoreLabel.text = String(dataControl.playerScore)
         
     }
     

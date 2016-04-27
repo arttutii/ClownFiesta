@@ -45,15 +45,14 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
                     if gameMode.currentClue?.clueFound == false {
                         gameMode.currentClue?.clueFound = true
                         dataControl.saveGame((gameMode.currentGameMode?.gameName)!, clueFound: (gameMode.currentGameMode?.gameClues[gameMode.currentClueInt!].clueFound)!, clueInt: (gameMode.currentClueInt)!, clueScore: (gameMode.currentClue?.clueScore)! )
-                        
                         notifyObserverViews()
                     } else {
-                        // HELLO
+                        print("Current clue's clueFound value is true, game is not saved.")
                     }
                     
                 }
             } else {
-                // hello
+                // Do nothing since beacon is not close enough to the device.
             }
             
         }

@@ -62,6 +62,7 @@ class ClueController: UIViewController, BeaconProtocol {
         alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action:UIAlertAction!) in
+            gameSingleton.currentClue?.clueScore -= 20
             self.performSegueWithIdentifier("clueToMap", sender: self)
         }
         alertController.addAction(OKAction)

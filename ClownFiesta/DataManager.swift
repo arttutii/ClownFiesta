@@ -22,13 +22,15 @@ class DataManager: NSObject {
     var playerName: String
     var playerAge: String
     var playerLocation: String
-    var playerScore: String
+    var playerScore: Int
+    var tempPlayerScore: String
     
     private override init() {
         self.playerName = ""
         self.playerAge = ""
         self.playerLocation = ""
-        self.playerScore = "0"
+        self.playerScore = 0
+        self.tempPlayerScore = "0"
     }
     
     func saveData(name: String, age: String, location: String, score: String) {
@@ -141,10 +143,11 @@ class DataManager: NSObject {
                 if res.count == 0 {
                     //Do Nothing
                 } else {
-                    
                     // Checks through array of results and finds the correct value to set as true.
                     for game in games {
                         if String(game.valueForKey("savedGameName")!) == String((gameMode.currentGameMode?.gameName)!) {
+                            tempPlayerScore = String(game.valueForKey("clueScore")!)
+                            playerScore += Int(tempPlayerScore)!
                             for i in 0...(gameMode.currentGameMode?.gameClues.count)! {
                                 if String(game.valueForKey("clueInt")!) == String(i) {
                                     gameMode.currentGameMode?.gameClues[Int(i)].clueFound = true
