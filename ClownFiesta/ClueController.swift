@@ -22,7 +22,7 @@ class ClueController: UIViewController, BeaconProtocol {
         //registerAsObserver()
 
         // Do any additional setup after loading the view.
-        //View Background
+        // View Background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
         self.navigationItem.hidesBackButton = true
@@ -50,9 +50,6 @@ class ClueController: UIViewController, BeaconProtocol {
     func back(sender: UIBarButtonItem) {
         performSegueWithIdentifier("clueToClues", sender: self)
     }
-
-    
-    // TBD FUNCTION --- Mark the clueFound as true and change view according to that
     
     // MARK: Actions
     
@@ -71,7 +68,6 @@ class ClueController: UIViewController, BeaconProtocol {
         
         self.presentViewController(alertController, animated: true, completion:nil)
     }
-    
     
     /*
     // MARK: - Navigation

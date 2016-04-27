@@ -14,6 +14,7 @@ class FiestaController: UIViewController {
     // MARK: Properties
     
     let gameMode:GameController = gameSingleton
+    let detector = detectorSingleton
     var audioPlayer = AVAudioPlayer()
     
     @IBOutlet var fiestaImageView: UIImageView!
@@ -25,7 +26,9 @@ class FiestaController: UIViewController {
         
         // Load the gamemodes
         gameMode.loadGameModes()
-
+        
+        // Request authorization to use bluetooth
+        detector.getAuthorization()
     }
 
     override func didReceiveMemoryWarning() {

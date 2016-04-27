@@ -147,7 +147,7 @@
 			children = (
 				6A25007D1CC6460500C3E6FE /* DataModel */,
 				6A25007A1CC645B100C3E6FE /* Data */,
-				6A2500791CC6459900C3E6FE /* Controllers */,
+				6A2500791CC6459900C3E6FE /* GameControl */,
 				6A25007C1CC645D700C3E6FE /* TableViewControllers */,
 				6A25D5E11CC78A3A00F94AF2 /* ViewControllers */,
 				6A12790F1CB390C20018A87D /* Main.storyboard */,
@@ -176,12 +176,12 @@
 			path = ClownFiestaUITests;
 			sourceTree = "<group>";
 		};
-		6A2500791CC6459900C3E6FE /* Controllers */ = {
+		6A2500791CC6459900C3E6FE /* GameControl */ = {
 			isa = PBXGroup;
 			children = (
 				6A25D5DF1CC77C1900F94AF2 /* GameController.swift */,
 			);
-			name = Controllers;
+			name = GameControl;
 			sourceTree = "<group>";
 		};
 		6A25007A1CC645B100C3E6FE /* Data */ = {
@@ -229,9 +229,9 @@
 				6A1C29041CCA3E9700763791 /* ClueFoundViewController.swift */,
 				6A0D67BB1CB68D60003CF882 /* MapController.swift */,
 				6AB8BCA01CB7BE2E0061C952 /* GameViewController.swift */,
-				6A12790D1CB390C20018A87D /* MainViewController.swift */,
 				6ACB6C591CC8AFEB00A18A56 /* TeamViewController.swift */,
 				6ACB6C5B1CC8B00000A18A56 /* UserViewController.swift */,
+				6A12790D1CB390C20018A87D /* MainViewController.swift */,
 				6AC627411CB66A4A00885DF7 /* FiestaController.swift */,
 			);
 			name = ViewControllers;

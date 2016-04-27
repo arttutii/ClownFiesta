@@ -22,9 +22,6 @@ class MainViewController: UIViewController, BeaconProtocol {
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "AppBackground")!)
         self.navigationItem.hidesBackButton = true
-        
-        // Request authorization to use bluetooth
-        detector.getAuthorization()
     }
     
     override func didReceiveMemoryWarning() {
