@@ -13,6 +13,7 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
     // MARK: Properties
     let gameMode: GameController = gameSingleton
     let detector = detectorSingleton
+    let dataControl = dataManager
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,9 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.tableView.backgroundView = UIImageView(image: UIImage(named: "BlueAppBackground"))
+        
+        // Fetch Games
+        dataControl.fetchGame()
     }
 
     override func didReceiveMemoryWarning() {
@@ -70,6 +74,7 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         gameMode.currentClue = gameMode.currentGameMode?.gameClues[indexPath.row]
+        gameMode.currentClueInt = indexPath.row
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {

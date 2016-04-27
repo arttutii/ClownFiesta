@@ -15,6 +15,7 @@ class GameController {
     var games = [Game]()
     var currentGameMode: Game?
     var currentClue: Clue?
+    var currentClueInt: Int?
     
     private init (){
         

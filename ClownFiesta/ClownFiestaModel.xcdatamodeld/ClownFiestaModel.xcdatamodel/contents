@@ -6,7 +6,13 @@
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="score" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="SavedGame" representedClassName=".SavedGame" syncable="YES">
+        <attribute name="clueFound" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="clueInt" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="savedGameName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Player" positionX="-36" positionY="-207" width="128" height="105"/>
+        <element name="SavedGame" positionX="-263" positionY="-225" width="128" height="90"/>
     </elements>
 </model>

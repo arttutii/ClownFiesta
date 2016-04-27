@@ -15,6 +15,9 @@ class DataManager: NSObject {
     // MARK: Properties
     
     var player: Player!
+    var games: [NSManagedObject]!
+    
+    let gameMode = gameSingleton
     
     var playerName: String
     var playerAge: String
@@ -95,6 +98,66 @@ class DataManager: NSObject {
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
+    }
+    
+    func saveGame(gameName: String, clueFound: Bool, clueInt: Int) {
+        // Create the Data Context
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Keep for creation if needed. Create data object to save into context
+        let entity =  NSEntityDescription.entityForName("SavedGame", inManagedObjectContext:managedContext)
+        let game = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        // Set values for the object
+        game.setValue(gameName, forKey: "savedGameName")
+        game.setValue(clueFound, forKey: "clueFound")
+        game.setValue(clueInt, forKey: "clueInt")
+        
+        // Save data
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        print("sour code jesus? ", game.valueForKey("clueFound")!)
+        print(game)
+        
+        
+    }
+    
+    func fetchGame() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "SavedGame")
+        
+        do {
+            let results:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
+            games = results as! [NSManagedObject]
+            
+            if let res = results {
+                if res.count == 0 {
+                    //Do Nothing
+                } else {
+                    
+                    // Checks through array of results and finds the correct value to set as true.
+                    for game in games {
+                        if String(game.valueForKey("saveGameName")) == (gameMode.currentGameMode?.gameName)! {
+                            for i in 0...(gameMode.currentGameMode?.gameClues.count)! {
+                                if String(game.valueForKey("clueInt")) == String(i) {
+                                    gameMode.currentGameMode?.gameClues[Int(i)].clueFound = true
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
     }
 
 }
