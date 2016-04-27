@@ -16,6 +16,7 @@ class ClueController: UIViewController, BeaconProtocol {
     
     @IBOutlet weak var clueLocation: UILabel!
     @IBOutlet weak var clueText: UITextView!
+    @IBOutlet weak var clueScoreLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +32,7 @@ class ClueController: UIViewController, BeaconProtocol {
         
         clueLocation.text = gameSingleton.currentGameMode?.gameLocation
         clueText.text = gameSingleton.currentClue?.clueDescription
-        
+        clueScoreLabel.text = String((gameSingleton.currentClue?.clueScore)!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -54,7 +55,7 @@ class ClueController: UIViewController, BeaconProtocol {
     // MARK: Actions
     
      @IBAction func unlockHintOnMap(sender: AnyObject) {
-        let alertController = UIAlertController(title: "Are you sure?", message: "Revealing the clue on map reduces the points awarded from finding it.", preferredStyle: .Alert)
+        let alertController = UIAlertController(title: "Are you sure?", message: "Revealing the clue on the map reduces the clue score by 20.", preferredStyle: .Alert)
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
             // Close Alert
@@ -63,6 +64,7 @@ class ClueController: UIViewController, BeaconProtocol {
         
         let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action:UIAlertAction!) in
             gameSingleton.currentClue?.clueScore -= 20
+            self.clueScoreLabel.text = String((gameSingleton.currentClue?.clueScore)!)
             self.performSegueWithIdentifier("clueToMap", sender: self)
         }
         alertController.addAction(OKAction)

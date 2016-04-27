@@ -562,8 +562,23 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="RedAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="tYJ-eo-vRx">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yz-Bg-6Le">
+                                        <rect key="frame" x="15" y="13" width="258" height="41"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Clue Score:">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="1" height="2"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suO-rc-hQE">
-                                        <rect key="frame" x="29" y="140" width="258" height="41"/>
+                                        <rect key="frame" x="15" y="157" width="258" height="41"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Clue">
                                                 <attributes>
@@ -578,12 +593,12 @@
                                         <size key="shadowOffset" width="1" height="2"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZXf-mw-1C1">
-                                        <rect key="frame" x="0.0" y="347" width="320" height="86"/>
+                                        <rect key="frame" x="0.0" y="381" width="320" height="86"/>
                                         <state key="normal">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Unlock hint on Map">
                                                     <attributes>
-                                                        <font key="NSFont" size="24" name="AmericanTypewriter-Bold"/>
+                                                        <font key="NSFont" size="27" name="AmericanTypewriter-Bold"/>
                                                     </attributes>
                                                 </fragment>
                                             </attributedString>
@@ -593,7 +608,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYl-su-Ea0">
-                                        <rect key="frame" x="29" y="8" width="258" height="38"/>
+                                        <rect key="frame" x="15" y="71" width="258" height="38"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Location">
                                                 <attributes>
@@ -607,7 +622,7 @@
                                         <size key="shadowOffset" width="1" height="2"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qY-PA-p3T">
-                                        <rect key="frame" x="44" y="46" width="268" height="47"/>
+                                        <rect key="frame" x="26" y="102" width="277" height="47"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Clue general location">
                                                 <attributes>
@@ -618,19 +633,34 @@
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feV-wI-wVL">
-                                        <rect key="frame" x="44" y="181" width="249" height="128"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feV-wI-wVL">
+                                        <rect key="frame" x="26" y="188" width="277" height="211"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Clue Description">
                                                 <attributes>
                                                     <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="24" name="AmericanTypewriter"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pg5-za-c5X">
+                                        <rect key="frame" x="212" y="13" width="86" height="41"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="0">
+                                                <attributes>
+                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <font key="NSFont" size="33" name="AmericanTypewriter-Bold"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <size key="shadowOffset" width="1" height="2"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -640,6 +670,7 @@
                     <navigationItem key="navigationItem" id="sqp-Vc-iC4"/>
                     <connections>
                         <outlet property="clueLocation" destination="9qY-PA-p3T" id="NOE-wO-zI4"/>
+                        <outlet property="clueScoreLabel" destination="pg5-za-c5X" id="2jD-VB-nC1"/>
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
                         <segue destination="16m-OR-yMZ" kind="push" identifier="clueToClues" animates="NO" id="vRH-Eb-NW5"/>
@@ -818,11 +849,11 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sVR-1O-ar3"/>
-        <segue reference="JPa-v9-bei"/>
-        <segue reference="QJY-KP-2xs"/>
         <segue reference="COK-dK-Erl"/>
-        <segue reference="uXY-Ce-tdf"/>
+        <segue reference="JPa-v9-bei"/>
+        <segue reference="jEY-VW-Qix"/>
         <segue reference="vRH-Eb-NW5"/>
+        <segue reference="gnt-l0-blg"/>
+        <segue reference="O9M-bi-6EB"/>
     </inferredMetricsTieBreakers>
 </document>
