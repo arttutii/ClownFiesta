@@ -143,12 +143,15 @@ class DataManager: NSObject {
                     
                     // Checks through array of results and finds the correct value to set as true.
                     for game in games {
-                        if String(game.valueForKey("saveGameName")) == (gameMode.currentGameMode?.gameName)! {
+                        if String(game.valueForKey("savedGameName")!) == String((gameMode.currentGameMode?.gameName)!) {
                             for i in 0...(gameMode.currentGameMode?.gameClues.count)! {
-                                if String(game.valueForKey("clueInt")) == String(i) {
+                                if String(game.valueForKey("clueInt")!) == String(i) {
                                     gameMode.currentGameMode?.gameClues[Int(i)].clueFound = true
                                 }
                             }
+                        } else {
+                            print("This is the entity name: ", String(game.valueForKey("savedGameName")))
+                            print("This is the currentgameName: ", String((gameMode.currentGameMode?.gameName)!))
                         }
                     }
                 }
