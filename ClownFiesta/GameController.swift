@@ -53,7 +53,7 @@ class GameController {
         loadClues(game4, Clues: [
             Clue(des: "Underneath the golden arches", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
             Clue(des: "In a hotel by a park", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
-            Clue(des: "Find me if you can", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22)
+            Clue(des: "Find me if you can", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22)
             ])
         
         games += [game1, game2, game3, game4]

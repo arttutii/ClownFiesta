@@ -17,6 +17,6 @@ extension Player {
     @NSManaged var age: String?
     @NSManaged var firstName: String?
     @NSManaged var location: String?
-    @NSManaged var score: String?
+    @NSManaged var score: NSNumber?
     
 }

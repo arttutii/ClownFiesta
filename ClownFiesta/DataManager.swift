@@ -23,14 +23,12 @@ class DataManager: NSObject {
     var playerAge: String
     var playerLocation: String
     var playerScore: Int
-    var tempPlayerScore: String
     
     private override init() {
         self.playerName = ""
         self.playerAge = ""
         self.playerLocation = ""
         self.playerScore = 0
-        self.tempPlayerScore = "0"
     }
     
     func saveData(name: String, age: String, location: String, score: String) {
@@ -56,7 +54,7 @@ class DataManager: NSObject {
         player.setValue(name, forKey: "firstName")
         player.setValue(age, forKey: "age")
         player.setValue(location, forKey: "location")
-        player.setValue(score, forKey: "score")
+        player.setValue(Int(score), forKey: "score")
         
         // Save data
         do {
@@ -88,7 +86,7 @@ class DataManager: NSObject {
                         self.playerName = (player.valueForKey("firstName") as? String)!
                         self.playerAge = (player.valueForKey("age") as? String)!
                         self.playerLocation = (player.valueForKey("location") as? String)!
-                        self.playerScore = (player.valueForKey("score") as? String)!
+                        self.playerScore = (player.valueForKey("score") as? Int)!
                 }
             }
             
@@ -110,6 +108,8 @@ class DataManager: NSObject {
         // Keep for creation if needed. Create data object to save into context
         let entity =  NSEntityDescription.entityForName("SavedGame", inManagedObjectContext:managedContext)
         let game = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        playerScore += clueScore
         
         // Set values for the object
         game.setValue(gameName, forKey: "savedGameName")
@@ -146,8 +146,6 @@ class DataManager: NSObject {
                     // Checks through array of results and finds the correct value to set as true.
                     for game in games {
                         if String(game.valueForKey("savedGameName")!) == String((gameMode.currentGameMode?.gameName)!) {
-                            tempPlayerScore = String(game.valueForKey("clueScore")!)
-                            playerScore += Int(tempPlayerScore)!
                             for i in 0...(gameMode.currentGameMode?.gameClues.count)! {
                                 if String(game.valueForKey("clueInt")!) == String(i) {
                                     gameMode.currentGameMode?.gameClues[Int(i)].clueFound = true
