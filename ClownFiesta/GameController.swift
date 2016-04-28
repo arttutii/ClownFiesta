@@ -44,14 +44,14 @@ class GameController {
             ])
         
         loadClues(game3, Clues: [
-            Clue(des: "This large church is one of the most famous landmarks in Helsinki", bMinor: 0, bMajor: 0,  lat: 60.2219863096813, long: 24.8049),
-            Clue(des: "A statue outside of an art museum", bMinor: 0, bMajor: 0, lat: 60.2219863096813, long: 24.8049),
-            Clue(des: "A strangely shaped church", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
-            Clue(des: "Stone carved depictions of Men holding globes", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22)
+            Clue(des: "This large church is one of the most famous landmarks in Helsinki", bMinor: 96, bMajor: 96,  lat: 60.2219863096813, long: 24.8049),
+            Clue(des: "A statue outside of an art museum", bMinor: 96, bMajor: 96, lat: 60.2219863096813, long: 24.8049),
+            Clue(des: "A strangely shaped church", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22),
+            Clue(des: "Stone carved depictions of Men holding globes", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22)
             ])
         
         loadClues(game4, Clues: [
-            Clue(des: "Underneath the golden arches", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
+            Clue(des: "Underneath the golden arches", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22),
             Clue(des: "In a hotel by a park", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22),
             Clue(des: "Find me if you can", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22)
             ])
