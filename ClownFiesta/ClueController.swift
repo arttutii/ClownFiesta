@@ -36,6 +36,13 @@ class ClueController: UIViewController, BeaconProtocol {
         clueLocation.text = gameSingleton.currentGameMode?.gameLocation
         clueText.text = gameSingleton.currentClue?.clueDescription
         clueScoreLabel.text = String((gameSingleton.currentClue?.clueScore)!)
+        
+        if gameMode.currentClue?.clueFound == true {
+            unlockButton.hidden = true
+        } else {
+            unlockButton.hidden = false
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,11 +73,14 @@ class ClueController: UIViewController, BeaconProtocol {
         alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action:UIAlertAction!) in
-            gameSingleton.currentClue?.clueScore -= 20
+            if self.gameMode.currentClue?.clueScore >= 20 {
+                self.gameMode.currentClue?.clueScore -= 20
+            } else {
+                self.gameMode.currentClue?.clueScore = 0
+            }
             self.clueScoreLabel.text = String((gameSingleton.currentClue?.clueScore)!)
             self.dataControl.saveGame((self.gameMode.currentGameMode?.gameName)!, clueFound: (self.gameMode.currentClue?.clueFound)!, clueInt: (self.gameMode.currentClueInt)!, clueScore: (self.gameMode.currentClue?.clueScore)! )
             self.performSegueWithIdentifier("clueToMap", sender: self)
-            self.unlockButton.hidden = true
         }
         alertController.addAction(OKAction)
         

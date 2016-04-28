@@ -36,7 +36,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
        
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
-            if closestBeacon.proximity.rawValue <= 1 {
+            if closestBeacon.proximity.rawValue <= 2 {
                 print("Closest beacon: ", closestBeacon)
                 if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMinor &&
                    closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {

@@ -28,6 +28,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
+        
         // Set delegates
         nameTextField.delegate = self
         nameTextField.autocapitalizationType = .Sentences
@@ -66,7 +67,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         let alert = UIAlertView(title: "User", message: "User Saved", delegate: nil, cancelButtonTitle: nil)
         alert.show()
         
-        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let delay = 1.0 * Double(NSEC_PER_SEC)
         let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
         dispatch_after(time, dispatch_get_main_queue(), {
             alert.dismissWithClickedButtonIndex(-1, animated: true)

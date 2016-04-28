@@ -12,8 +12,13 @@
         <attribute name="clueScore" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="savedGameName" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Team" representedClassName=".Team" syncable="YES">
+        <attribute name="memberName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Player" positionX="-36" positionY="-207" width="128" height="105"/>
         <element name="SavedGame" positionX="-263" positionY="-225" width="128" height="103"/>
+        <element name="Team" positionX="-153" positionY="-189" width="128" height="75"/>
     </elements>
 </model>
