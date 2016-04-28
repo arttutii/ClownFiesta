@@ -672,6 +672,7 @@
                         <outlet property="clueLocation" destination="9qY-PA-p3T" id="NOE-wO-zI4"/>
                         <outlet property="clueScoreLabel" destination="pg5-za-c5X" id="2jD-VB-nC1"/>
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
+                        <outlet property="unlockButton" destination="ZXf-mw-1C1" id="3v3-Ui-d8Z"/>
                         <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
                         <segue destination="16m-OR-yMZ" kind="push" identifier="clueToClues" animates="NO" id="vRH-Eb-NW5"/>
                         <segue destination="IeS-EL-5Vj" kind="push" identifier="clueToMap" id="gnt-l0-blg"/>
@@ -849,11 +850,11 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="COK-dK-Erl"/>
-        <segue reference="JPa-v9-bei"/>
         <segue reference="jEY-VW-Qix"/>
         <segue reference="vRH-Eb-NW5"/>
-        <segue reference="aUb-N3-Vjg"/>
         <segue reference="gnt-l0-blg"/>
+        <segue reference="O9M-bi-6EB"/>
+        <segue reference="JPa-v9-bei"/>
+        <segue reference="COK-dK-Erl"/>
     </inferredMetricsTieBreakers>
 </document>

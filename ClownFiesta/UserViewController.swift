@@ -25,6 +25,9 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         super.viewDidLoad()
         //registerAsObserver()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
+        
         // Set delegates
         nameTextField.delegate = self
         nameTextField.autocapitalizationType = .Sentences
@@ -74,6 +77,11 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func registerAsObserver() {

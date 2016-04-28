@@ -19,7 +19,8 @@ class ClueController: UIViewController, BeaconProtocol {
     @IBOutlet weak var clueLocation: UILabel!
     @IBOutlet weak var clueText: UITextView!
     @IBOutlet weak var clueScoreLabel: UILabel!
-
+    @IBOutlet weak var unlockButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //registerAsObserver()
@@ -69,6 +70,7 @@ class ClueController: UIViewController, BeaconProtocol {
             self.clueScoreLabel.text = String((gameSingleton.currentClue?.clueScore)!)
             self.dataControl.saveGame((self.gameMode.currentGameMode?.gameName)!, clueFound: (self.gameMode.currentClue?.clueFound)!, clueInt: (self.gameMode.currentClueInt)!, clueScore: (self.gameMode.currentClue?.clueScore)! )
             self.performSegueWithIdentifier("clueToMap", sender: self)
+            self.unlockButton.hidden = true
         }
         alertController.addAction(OKAction)
         
