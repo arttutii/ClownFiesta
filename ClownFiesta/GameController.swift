@@ -34,13 +34,13 @@ class GameController {
         let game4 = Game(GameName: "Finest Cuisine", GameClues: [], GameLocation: "Helsinki", GameDescription: "Try some of Helsinki's most enjoyable restaurants")
         
         loadClues(game1, Clues: [
-            Clue(des: "Hello", bMinor: 0, bMajor: 0 , lat: 60.0, long: 24.22),
+            Clue(des: "Hello", bMinor: 96, bMajor: 96 , lat: 60.0, long: 24.22),
             Clue(des: "Wow", bMinor: 96, bMajor: 96, lat: 60.2219863096813, long: 24.8049)
             ])
         
         loadClues(game2, Clues: [
-            Clue(des: "Oh my", bMinor: 0, bMajor: 0, lat: 60.0, long: 24.22 ),
-            Clue(des: "Is it me you're looking for?", bMinor: 0, bMajor: 0 , lat: 60.2219863096813, long: 24.8049)
+            Clue(des: "Oh my", bMinor: 96, bMajor: 96, lat: 60.0, long: 24.22 ),
+            Clue(des: "Is it me you're looking for?", bMinor: 96, bMajor: 96 , lat: 60.2219863096813, long: 24.8049)
             ])
         
         loadClues(game3, Clues: [

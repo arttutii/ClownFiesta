@@ -109,8 +109,6 @@ class DataManager: NSObject {
         let entity =  NSEntityDescription.entityForName("SavedGame", inManagedObjectContext:managedContext)
         let game = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
-        playerScore += clueScore
-        
         // Set values for the object
         game.setValue(gameName, forKey: "savedGameName")
         game.setValue(clueFound, forKey: "clueFound")
@@ -148,11 +146,12 @@ class DataManager: NSObject {
                         if String(game.valueForKey("savedGameName")!) == String((gameMode.currentGameMode?.gameName)!) {
                             for i in 0...(gameMode.currentGameMode?.gameClues.count)! {
                                 if String(game.valueForKey("clueInt")!) == String(i) {
-                                    gameMode.currentGameMode?.gameClues[Int(i)].clueFound = true
+                                    gameMode.currentGameMode?.gameClues[Int(i)].clueFound = Bool(Int(game.valueForKey("clueFound")! as! NSNumber))
+                                    gameMode.currentGameMode?.gameClues[Int(i)].clueScore = Int(game.valueForKey("clueScore")! as! NSNumber)
                                 }
                             }
                         } else {
-                            print("This is the entity name: ", String(game.valueForKey("savedGameName")))
+                            print("This is the entity name: ", String(game.valueForKey("savedGameName")!))
                             print("This is the currentgameName: ", String((gameMode.currentGameMode?.gameName)!))
                         }
                     }
@@ -164,5 +163,41 @@ class DataManager: NSObject {
         }
         
     }
+    
+    func saveFirstData(name: String, age: String, location: String, score: String) {
+        // Create the Data Context
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Keep for creation if needed. Create data object to save into context
+        //let entity =  NSEntityDescription.entityForName("Player", inManagedObjectContext:managedContext)
+        //var player = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Player")
+        
+        do {
+            let result = try managedContext.executeFetchRequest(fetchRequest)
+            player = result[0] as! Player
+            print("FETCH FREEDOM!!!")
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        // Set values for the object
+        player.setValue(name, forKey: "firstName")
+        player.setValue(age, forKey: "age")
+        player.setValue(location, forKey: "location")
+        player.setValue(Int(score), forKey: "score")
+        
+        // Save data
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        print("SWEET CODE JESUS", player.valueForKey("firstName")!)
+        print(player)
+    }
+
 
 }

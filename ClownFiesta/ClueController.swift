@@ -67,7 +67,7 @@ class ClueController: UIViewController, BeaconProtocol {
         let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action:UIAlertAction!) in
             gameSingleton.currentClue?.clueScore -= 20
             self.clueScoreLabel.text = String((gameSingleton.currentClue?.clueScore)!)
-            self.dataControl.saveGame((self.gameMode.currentGameMode?.gameName)!, clueFound: (self.gameMode.currentGameMode?.gameClues[self.gameMode.currentClueInt!].clueFound)!, clueInt: (self.gameMode.currentClueInt)!, clueScore: (self.gameMode.currentClue?.clueScore)! )
+            self.dataControl.saveGame((self.gameMode.currentGameMode?.gameName)!, clueFound: (self.gameMode.currentClue?.clueFound)!, clueInt: (self.gameMode.currentClueInt)!, clueScore: (self.gameMode.currentClue?.clueScore)! )
             self.performSegueWithIdentifier("clueToMap", sender: self)
         }
         alertController.addAction(OKAction)
