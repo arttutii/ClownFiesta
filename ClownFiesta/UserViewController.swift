@@ -37,6 +37,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
         // Get user from device data storage
+        dataControl.saveData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
         dataControl.fetchUser()
         
         // Set textfields as the received data
