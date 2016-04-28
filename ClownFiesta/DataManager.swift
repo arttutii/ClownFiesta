@@ -16,9 +16,13 @@ class DataManager: NSObject {
     
     var player: Player!
     var games: [NSManagedObject]!
+    var teams: [NSManagedObject]!
     
     let gameMode = gameSingleton
     
+    var teamName: String!
+    var teamMembers: [String]!
+    var currentTeam: String!
     var playerName: String
     var playerAge: String
     var playerLocation: String
@@ -31,7 +35,7 @@ class DataManager: NSObject {
         self.playerScore = 0
     }
     
-    func saveData(name: String, age: String, location: String, score: String) {
+    func saveFirstData(name: String, age: String, location: String, score: String) {
         // Create the Data Context
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -164,7 +168,7 @@ class DataManager: NSObject {
         
     }
     
-    func saveFirstData(name: String, age: String, location: String, score: String) {
+    func saveData(name: String, age: String, location: String, score: String) {
         // Create the Data Context
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -197,6 +201,52 @@ class DataManager: NSObject {
         }
         print("SWEET CODE JESUS", player.valueForKey("firstName")!)
         print(player)
+    }
+    
+    func saveTeam(teamName: String, memberName: String) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Keep for creation if needed. Create data object to save into context
+        let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
+        let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        team.setValue(teamName, forKey: "teamName")
+        team.setValue(memberName, forKey: "memberName")
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    func fetchTeam() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "Team")
+        
+        do {
+            let results:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
+            teams = results as! [NSManagedObject]
+    
+            if let res = results {
+                if res.count == 0 {
+                    //Do Nothing
+                } else {
+                    // Checks through array of results and finds the correct value to set as true.
+                    for team in teams {
+                        teamMembers.append(String(team.valueForKey("teamMember")!))
+                    }
+                    
+                }
+            }
+            
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
     }
 
 

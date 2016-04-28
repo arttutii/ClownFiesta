@@ -90,7 +90,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="ClownFiesta" id="gkY-wL-rN7"/>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jlE-qF-504"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="jlE-qF-504"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -109,7 +109,7 @@
                     <navigationItem key="navigationItem" title="Map" id="SqJ-XD-4gL"/>
                     <connections>
                         <outlet property="mapView" destination="qfJ-DK-hPc" id="6We-5s-CEz"/>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="IHG-NV-ZEz"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="IHG-NV-ZEz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mqv-ZM-p1T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -223,7 +223,7 @@
                         <outlet property="locationTextField" destination="pGa-cV-h5L" id="UTd-t8-E8v"/>
                         <outlet property="nameTextField" destination="31g-mN-qNT" id="23w-f0-qie"/>
                         <outlet property="scoreLabel" destination="v0a-S4-wjU" id="I8Z-83-EZv"/>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="uXY-Ce-tdf"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="uXY-Ce-tdf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WJw-cd-cCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,7 +285,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="DsZ-Wy-Kug"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="W2r-Kf-twY"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="W2r-Kf-twY"/>
                         <segue destination="9iv-NM-5g2" kind="push" identifier="gamesToMenu" animates="NO" id="JPa-v9-bei"/>
                     </connections>
                 </tableViewController>
@@ -315,7 +315,7 @@
                         <barButtonItem key="backBarButtonItem" title="back" id="5kJ-D6-dxb"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jjm-19-eEs"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="jjm-19-eEs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRa-Qp-MZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -442,7 +442,7 @@
                     <tabBarItem key="tabBarItem" title="Clues" image="ClueIcon" selectedImage="ClueIcon" id="Roj-eq-WoA"/>
                     <navigationItem key="navigationItem" title="Clues" id="GdL-zJ-zU8"/>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="aUb-N3-Vjg"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="aUb-N3-Vjg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mC5-ur-gsw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -673,7 +673,7 @@
                         <outlet property="clueScoreLabel" destination="pg5-za-c5X" id="2jD-VB-nC1"/>
                         <outlet property="clueText" destination="feV-wI-wVL" id="RX5-4T-UaS"/>
                         <outlet property="unlockButton" destination="ZXf-mw-1C1" id="3v3-Ui-d8Z"/>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="O9M-bi-6EB"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="O9M-bi-6EB"/>
                         <segue destination="16m-OR-yMZ" kind="push" identifier="clueToClues" animates="NO" id="vRH-Eb-NW5"/>
                         <segue destination="IeS-EL-5Vj" kind="push" identifier="clueToMap" id="gnt-l0-blg"/>
                     </connections>
@@ -748,7 +748,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7d1-aO-kIa">
                                 <rect key="frame" x="20" y="272" width="280" height="282"/>
                                 <connections>
-                                    <segue destination="KqZ-zR-NB7" kind="embed" id="zSm-2c-wXR"/>
+                                    <segue destination="KqZ-zR-NB7" kind="embed" identifier="" id="zSm-2c-wXR"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -758,7 +758,8 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="wv4-ql-cf6"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="nIw-Vx-esM"/>
+                        <outlet property="teamNameField" destination="p8u-y1-VVg" id="XnV-lp-oSp"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="nIw-Vx-esM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ro-IX-MW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -855,7 +856,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="modeLabel" destination="Z1u-1q-QXO" id="XB7-2R-kMe"/>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" id="jfY-zg-NT2"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="jfY-zg-NT2"/>
                         <segue destination="BYZ-38-t0r" kind="push" identifier="menuToMenu" animates="NO" id="COK-dK-Erl"/>
                     </connections>
                 </viewController>
@@ -884,11 +885,11 @@
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vRH-Eb-NW5"/>
-        <segue reference="gnt-l0-blg"/>
-        <segue reference="jEY-VW-Qix"/>
         <segue reference="JPa-v9-bei"/>
+        <segue reference="jEY-VW-Qix"/>
+        <segue reference="YH2-km-tXd"/>
+        <segue reference="jlE-qF-504"/>
         <segue reference="COK-dK-Erl"/>
-        <segue reference="nIw-Vx-esM"/>
+        <segue reference="gnt-l0-blg"/>
     </inferredMetricsTieBreakers>
 </document>

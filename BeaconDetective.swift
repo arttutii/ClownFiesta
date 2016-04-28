@@ -44,10 +44,12 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
                     print("BEACON FOUND!!!!")
                     if gameMode.currentClue?.clueFound == false {
                         gameMode.currentClue?.clueFound = true
+                        // Save the Game
                         dataControl.saveGame((gameMode.currentGameMode?.gameName)!, clueFound: (gameMode.currentGameMode?.gameClues[gameMode.currentClueInt!].clueFound)!, clueInt: (gameMode.currentClueInt)!, clueScore: (gameMode.currentClue?.clueScore)! )
+                        // Add clueScore to the playerscore
                         dataControl.playerScore += (gameMode.currentClue?.clueScore)!
-                        dataControl.saveFirstData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
-                        print("PLAYER SCORE: ", dataControl.playerScore)
+                        // Save the User Data
+                        dataControl.saveData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
                         notifyObserverViews()
                     } else {
                         print("Current clue's clueFound value is true, game is not saved.")

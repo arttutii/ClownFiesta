@@ -28,7 +28,6 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
         
-        
         // Set delegates
         nameTextField.delegate = self
         nameTextField.autocapitalizationType = .Sentences
@@ -50,7 +49,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         locationTextField.text = dataControl.playerLocation
         scoreLabel.text = String(dataControl.playerScore)
         
-        dataControl.saveData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
+        dataControl.saveFirstData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
         //print(dataControl.playerName, dataControl.playerAge, dataControl.playerLocation, String(dataControl.playerScore))
         
     }
@@ -63,7 +62,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     // MARK: Actions
     
     @IBAction func saveUser(sender: AnyObject) {
-        dataControl.saveFirstData(nameTextField.text!, age: ageTextField.text!, location: locationTextField.text!, score: String(dataControl.playerScore))
+        dataControl.saveData(nameTextField.text!, age: ageTextField.text!, location: locationTextField.text!, score: String(dataControl.playerScore))
         let alert = UIAlertView(title: "User", message: "User Saved", delegate: nil, cancelButtonTitle: nil)
         alert.show()
         
