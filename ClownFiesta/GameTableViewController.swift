@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameTableViewController: UITableViewController, BeaconProtocol {
+class GameTableViewController: UITableViewController {
     
     // MARK: Properties
     let gameMode: GameController = gameSingleton
@@ -16,7 +16,6 @@ class GameTableViewController: UITableViewController, BeaconProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //registerAsObserver()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -72,15 +71,6 @@ class GameTableViewController: UITableViewController, BeaconProtocol {
         cell.backgroundColor = UIColor.clearColor()
     }
     
-    func registerAsObserver() {
-        detector.observerViews.append(self)
-    }
-    
-    func notifyObserver() {
-        performSegueWithIdentifier("ClueFoundSegue", sender: self)
-    
-    }
-
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

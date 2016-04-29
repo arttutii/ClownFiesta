@@ -6,8 +6,8 @@
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
-
 let leaderboardSingleton = Leaderboard()
+
 class Leaderboard {
 
     var leaderboard = [LeaderboardPlayers]()
@@ -35,7 +35,6 @@ class Leaderboard {
         let player14 = LeaderboardPlayers(playerName: "Chris", playerScore: 350)
         let player15 = LeaderboardPlayers(playerName: "Matti", playerScore: 100)
     
-
         leaderboard += [player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15]
     }
 }

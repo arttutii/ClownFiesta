@@ -30,7 +30,7 @@ class TeamViewController: UIViewController, UITextFieldDelegate {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
-
+        
         teamNameField.text = dataControl.currentTeam
         dataControl.currentTeam = teamNameField.text!
         
@@ -71,8 +71,6 @@ class TeamViewController: UIViewController, UITextFieldDelegate {
     // MARK: Actions
     
     @IBAction func addMembersBtn(sender: AnyObject) {
-        // dataControl.saveTeam(dataControl.currentTeam, memberName: addMemberField!)
-        
         // display an alert
         let newWordPrompt = UIAlertController(title: "Add member", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         newWordPrompt.addTextFieldWithConfigurationHandler(addTextField)
@@ -108,5 +106,5 @@ class TeamViewController: UIViewController, UITextFieldDelegate {
             showAlert()
         }
     }
-
+    
 }

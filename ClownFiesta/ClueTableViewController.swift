@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClueTableViewController: UITableViewController, BeaconProtocol {
+class ClueTableViewController: UITableViewController {
     
     // MARK: Properties
     let gameMode: GameController = gameSingleton
@@ -17,7 +17,6 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //registerAsObserver()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -33,15 +32,6 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func registerAsObserver() {
-        detector.observerViews.append(self)
-    }
-    
-    func notifyObserver() {
-        self.tableView.reloadData()
-        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
 
     // MARK: - Table view data source

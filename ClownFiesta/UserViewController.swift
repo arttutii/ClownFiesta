@@ -23,7 +23,6 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //registerAsObserver()
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
         view.addGestureRecognizer(tap)
@@ -40,7 +39,6 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "RedAppBackground")!)
         
         // Get user from device data storage
-        //dataControl.saveData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
         dataControl.fetchUser()
         
         // Set textfields as the received data
@@ -50,7 +48,6 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         scoreLabel.text = String(dataControl.playerScore)
         
         dataControl.saveFirstData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
-        //print(dataControl.playerName, dataControl.playerAge, dataControl.playerLocation, String(dataControl.playerScore))
         
     }
     
@@ -74,7 +71,6 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         })
     }
     
-        
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

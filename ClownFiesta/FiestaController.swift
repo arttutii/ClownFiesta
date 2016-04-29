@@ -15,7 +15,6 @@ class FiestaController: UIViewController {
     
     let gameMode:GameController = gameSingleton
     let detector = detectorSingleton
-    var audioPlayer = AVAudioPlayer()
     
     @IBOutlet var fiestaImageView: UIImageView!
     @IBOutlet weak var fiestaLabel: UILabel!
@@ -36,19 +35,5 @@ class FiestaController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-   /* func playBackgroundMusic() {
-        do {
-            if let bundle = NSBundle.mainBundle().pathForResource("Yeehah", ofType: "mp3") {
-                let alertSound = NSURL(fileURLWithPath: bundle)
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-                try AVAudioSession.sharedInstance().setActive(true)
-                try audioPlayer = AVAudioPlayer(contentsOfURL: alertSound)
-                audioPlayer.prepareToPlay()
-                audioPlayer.play()
-            }
-        } catch {
-            print(error)
-        }
-    }*/
 
 }
