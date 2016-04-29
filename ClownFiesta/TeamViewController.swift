@@ -39,6 +39,7 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "BlueAppBackground")!)
         
+        dataControl.fetchTeam()
         dataControl.saveTeam(dataControl.currentTeam, memberName: dataControl.playerName)
         dataControl.fetchTeam()
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)

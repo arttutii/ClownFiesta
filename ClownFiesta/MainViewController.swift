@@ -14,6 +14,7 @@ class MainViewController: UIViewController, BeaconProtocol {
     // MARK: Properties
     
     let detector:BeaconDetective = detectorSingleton
+    let dataControl = dataManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,8 @@ class MainViewController: UIViewController, BeaconProtocol {
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "AppBackground")!)
         self.navigationItem.hidesBackButton = true
+        dataControl.fetchUser()
+        dataControl.fetchTeam()
     }
     
     override func didReceiveMemoryWarning() {
