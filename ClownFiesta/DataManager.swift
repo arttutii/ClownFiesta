@@ -16,6 +16,7 @@ class DataManager: NSObject {
     
     var player: Player!
     var newTeam: Team!
+    var someTeam: Team!
     var games: [NSManagedObject]!
     var teams: [NSManagedObject]!
     
@@ -262,12 +263,13 @@ class DataManager: NSObject {
             let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             
             if let res = result {
+                    someTeam = result![0] as! Team
                     let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
                     let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
                 // Search through teams and look if the new team member is already in the team
                 for teams in result! {
                     print("Going through:",teams.valueForKey("teamName")!, " --- Current team:",currentTeam)
-                    if String(teams.valueForKey("teamName")!) == currentTeam {
+                    if String(someTeam.valueForKey("teamName")!) == currentTeam {
                         if String(teams.valueForKey("memberName")) == newTeamMember{
                             memberCheck = true
                         } else {
