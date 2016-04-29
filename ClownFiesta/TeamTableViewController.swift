@@ -8,7 +8,15 @@
 
 import UIKit
 
-class TeamTableViewController: UITableViewController {
+let teamTableSingleton = TeamTableViewController()
+
+class TeamTableViewController: UITableViewController, TeamProtocol {
+    
+    // MARK: Properties
+    
+    let dataControl = dataManager
+    let teamControl = teamSingleton
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +27,21 @@ class TeamTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        registerAsObserver()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name: "load", object: nil)
+        
         self.tableView.backgroundColor = UIColor.clearColor()
+        dataControl.fetchTeam()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loadList(notification: NSNotification) {
+        self.tableView.reloadData()
+        print("1we")
     }
 
     // MARK: - Table view data source
@@ -36,18 +53,34 @@ class TeamTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if dataControl.teamMembers.count == 0 {
+            return 0
+        } else {
+            return dataControl.teamMembers.count
+        }
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "TeamTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TeamTableViewCell
-        
+        cell.memberNameLabel.text = dataControl.teamMembers[indexPath.row]
+        print("membername: ",dataControl.teamMembers[indexPath.row])
+        print("members count: ", dataControl.teamMembers.count)
         return cell
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
+    }
+    
+    func registerAsObserver() {
+        print("DOUBLE FUCK")
+        teamControl.teamObservers.append(self)
+    }
+    
+    func notifyObserver() {
+        self.tableView.reloadData()
+        print("FUCK")
     }
     
     /*

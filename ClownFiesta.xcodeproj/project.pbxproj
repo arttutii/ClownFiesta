@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A05C2241CD340C200A1B02F /* TeamProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A05C2231CD340C200A1B02F /* TeamProtocol.swift */; };
 		6A09D9E11CC8DAFE00448836 /* MapMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09D9E01CC8DAFE00448836 /* MapMark.swift */; };
 		6A09D9E31CC8E26600448836 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A09D9E21CC8E26600448836 /* Beacon.swift */; };
 		6A0C388A1CB3B9890014D886 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0C38891CB3B9890014D886 /* Map.swift */; };
@@ -64,6 +65,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6A05C2231CD340C200A1B02F /* TeamProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamProtocol.swift; sourceTree = "<group>"; };
 		6A09D9E01CC8DAFE00448836 /* MapMark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapMark.swift; sourceTree = "<group>"; };
 		6A09D9E21CC8E26600448836 /* Beacon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
 		6A0C38891CB3B9890014D886 /* Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 			children = (
 				6A12790B1CB390C20018A87D /* AppDelegate.swift */,
 				6AD5E0111CC4DAC3005A2BA6 /* BeaconProtocol.swift */,
+				6A05C2231CD340C200A1B02F /* TeamProtocol.swift */,
 				6AD5E0151CC4FD0A005A2BA6 /* BeaconDetective.swift */,
 				6A09D9E21CC8E26600448836 /* Beacon.swift */,
 				6A0C38891CB3B9890014D886 /* Map.swift */,
@@ -218,8 +221,8 @@
 				6AB8BC9A1CB7B8400061C952 /* GameTableViewController.swift */,
 				6A524A031CBD02B700FE7F0C /* ClueTableViewCell.swift */,
 				6A524A011CBCFE4900FE7F0C /* ClueTableViewController.swift */,
-				6A0EC35E1CD21E40003594B4 /* TeamTableViewController.swift */,
 				6A0EC3601CD21E5E003594B4 /* TeamTableViewCell.swift */,
+				6A0EC35E1CD21E40003594B4 /* TeamTableViewController.swift */,
 			);
 			name = TableViewControllers;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				6A09D9E31CC8E26600448836 /* Beacon.swift in Sources */,
 				6A0EC3651CD21F6D003594B4 /* Team.swift in Sources */,
 				6AC23AF41CD0B258006B5A4C /* SavedGame.swift in Sources */,
+				6A05C2241CD340C200A1B02F /* TeamProtocol.swift in Sources */,
 				6A1C29051CCA3E9700763791 /* ClueFoundViewController.swift in Sources */,
 				6AB8BC9B1CB7B8400061C952 /* GameTableViewController.swift in Sources */,
 				6A09D9E11CC8DAFE00448836 /* MapMark.swift in Sources */,

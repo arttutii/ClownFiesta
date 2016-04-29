@@ -63,6 +63,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     
     @IBAction func saveUser(sender: AnyObject) {
         dataControl.saveData(nameTextField.text!, age: ageTextField.text!, location: locationTextField.text!, score: String(dataControl.playerScore))
+        dataControl.fetchUser()
         let alert = UIAlertView(title: "User", message: "User Saved", delegate: nil, cancelButtonTitle: nil)
         alert.show()
         

@@ -10,6 +10,8 @@ import UIKit
 
 class TeamTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var memberNameLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

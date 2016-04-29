@@ -37,7 +37,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
             if closestBeacon.proximity.rawValue <= 2 {
-                print("Closest beacon: ", closestBeacon)
+                //print("Closest beacon: ", closestBeacon)
                 if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMinor &&
                    closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {
                     // confirm clue as Located & mark the clue as Found

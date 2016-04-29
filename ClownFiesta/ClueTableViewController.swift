@@ -58,7 +58,6 @@ class ClueTableViewController: UITableViewController, BeaconProtocol {
         let cellIdentifier = "ClueTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ClueTableViewCell
         
-        //let clue = gameMode.currentGameMode?.gameClues[indexPath.row]
         cell.clueLabel.text = "Clue #\(indexPath.row + 1)"
         
         if gameMode.currentGameMode?.gameClues[indexPath.row].clueFound == true {

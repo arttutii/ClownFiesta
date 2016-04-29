@@ -15,17 +15,18 @@ class DataManager: NSObject {
     // MARK: Properties
     
     var player: Player!
+    var newTeam: Team!
     var games: [NSManagedObject]!
     var teams: [NSManagedObject]!
     
     let gameMode = gameSingleton
     
     var teamName: String!
-    var teamMembers: [String]!
+    var teamMembers: [String]! = []
     var currentTeam: String!
-    var playerName: String
-    var playerAge: String
-    var playerLocation: String
+    var playerName: String!
+    var playerAge: String!
+    var playerLocation: String!
     var playerScore: Int
     
     private override init() {
@@ -80,17 +81,17 @@ class DataManager: NSObject {
             let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             
             if let res = result {
-                    if res.count == 0 {
-                        //Do Nothing
-                    } else {
-                        
-                        player = result![0] as! Player
-                        print("SWEET FREEDOM!!!", String(player.valueForKey("firstName")!))
-                        
-                        self.playerName = (player.valueForKey("firstName") as? String)!
-                        self.playerAge = (player.valueForKey("age") as? String)!
-                        self.playerLocation = (player.valueForKey("location") as? String)!
-                        self.playerScore = (player.valueForKey("score") as? Int)!
+                if res.count == 0 {
+                    //Do Nothing
+                } else {
+                    
+                    player = result![0] as! Player
+                    print("SWEET FREEDOM!!!", String(player.valueForKey("firstName")!))
+                    
+                    self.playerName = (player.valueForKey("firstName") as? String)!
+                    self.playerAge = (player.valueForKey("age") as? String)!
+                    self.playerLocation = (player.valueForKey("location") as? String)!
+                    self.playerScore = (player.valueForKey("score") as? Int)!
                 }
             }
             
@@ -206,19 +207,41 @@ class DataManager: NSObject {
     func saveTeam(teamName: String, memberName: String) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Team")
         
-        // Keep for creation if needed. Create data object to save into context
-        let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
-        let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-        team.setValue(teamName, forKey: "teamName")
-        team.setValue(memberName, forKey: "memberName")
+        do {
+            let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
+            
+            if let res = result {
+                if res.count == 0 {
+                    let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
+                    let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                    
+                    team.setValue(currentTeam, forKey: "teamName")
+                    team.setValue(playerName, forKey: "memberName")
+
+                } else {
+                    newTeam = result![0] as! Team
+                    if String(newTeam.valueForKey("teamName")!) == currentTeam {
+                        newTeam.setValue(playerName, forKey: "memberName")
+                    } else {
+                        //Keep for Deleting in case
+                        newTeam.setValue(teamName, forKey: "teamName")
+                        newTeam.setValue(memberName, forKey: "memberName")
+                    }
+                }
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
         
         do {
             try managedContext.save()
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
+        
+        print("Hello, Team has been saved!")
         
     }
     
@@ -228,26 +251,29 @@ class DataManager: NSObject {
         
         let fetchRequest = NSFetchRequest(entityName: "Team")
         
+        teamMembers = []
+        
         do {
             let results:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             teams = results as! [NSManagedObject]
-    
+            
             if let res = results {
                 if res.count == 0 {
                     //Do Nothing
                 } else {
                     // Checks through array of results and finds the correct value to set as true.
                     for team in teams {
-                        teamMembers.append(String(team.valueForKey("teamMember")!))
+                        teamMembers.append(String(team.valueForKey("memberName")!))
                     }
-                    
+                    self.currentTeam = String(teams[0].valueForKey("teamName")!)
                 }
             }
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
+        print("Hello, team has been fetched!")
     }
-
-
+    
+    
 }
