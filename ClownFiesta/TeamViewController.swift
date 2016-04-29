@@ -58,6 +58,7 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     func textFieldDidEndEditing(textField: UITextField) {
         dataControl.currentTeam = teamNameField.text!
         print("currentTeamName : ", teamNameField.text!)
+        dataControl.saveTeam(dataControl.currentTeam, memberName: "")
     }
 
 }
