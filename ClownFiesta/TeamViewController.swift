@@ -22,6 +22,7 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     
    
     @IBOutlet weak var teamNameField: UITextField!
+    @IBOutlet var newWordField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,21 +74,36 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         dataControl.saveTeam(dataControl.currentTeam, memberName: dataControl.playerName)
         print("--------------------",dataControl.currentTeam, dataControl.playerName)
         dataControl.fetchTeam()
+        
+        // Used to reload the Team tableView data
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
     
     // MARK: Actions
     
     @IBAction func addMembersBtn(sender: AnyObject) {
-        let alert = UIAlertView()
-        addMemberField? = String(alert.textFieldAtIndex(0))
-        
         // dataControl.saveTeam(dataControl.currentTeam, memberName: addMemberField!)
-        alert.title = "Enter Input"
-        alert.addButtonWithTitle("Done")
-        alert.alertViewStyle = UIAlertViewStyle.PlainTextInput
-        alert.addButtonWithTitle("Cancel")
-        alert.show()
+        
+        // display an alert
+        let newWordPrompt = UIAlertController(title: "Add member", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        newWordPrompt.addTextFieldWithConfigurationHandler(addTextField)
+        newWordPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
+        newWordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: addMember))
+        presentViewController(newWordPrompt, animated: true, completion: nil)
+    }
+    
+    func addTextField(textField: UITextField!){
+        // add the text field and make the result global
+        textField.placeholder = "Player name"
+        
+        self.newWordField = textField
+        self.newWordField!.autocapitalizationType = .Sentences
+    }
+    
+    func addMember(alert: UIAlertAction!){
+        dataControl.addMemberToTeam("Team", newTeamMember: (self.newWordField?.text)!)
+        // Used to reload the Team tableView data
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
     
     // Go through the array of observer ViewControllers and call their notify method
