@@ -16,7 +16,7 @@ class DataManager: NSObject {
     
     var player: Player!
     var newTeam: Team!
-    var someTeam: Team!
+    var originalTeam: Team!
     var games: [NSManagedObject]!
     var teams: [NSManagedObject]!
     
@@ -24,7 +24,7 @@ class DataManager: NSObject {
     
     var teamName: String!
     var teamMembers: [String]! = []
-    var memberCheck: Bool?
+    var memberCheck: Bool? = false
     var currentTeam: String!
     
     var playerName: String!
@@ -139,7 +139,7 @@ class DataManager: NSObject {
             
             //Keep for Deleting in case
             /*for i in result! {
-                managedContext.deleteObject(i as! NSManagedObject)
+            managedContext.deleteObject(i as! NSManagedObject)
             }*/
             
         } catch let error as NSError {
@@ -228,7 +228,7 @@ class DataManager: NSObject {
                     
                     team.setValue(currentTeam, forKey: "teamName")
                     team.setValue(playerName, forKey: "memberName")
-
+                    
                 } else {
                     newTeam = result![0] as! Team
                     if String(newTeam.valueForKey("teamName")!) == currentTeam {
@@ -263,23 +263,23 @@ class DataManager: NSObject {
             let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             
             if let res = result {
-                    someTeam = result![0] as! Team
-                    let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
-                    let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+                originalTeam = result![0] as! Team
                 // Search through teams and look if the new team member is already in the team
                 for teams in result! {
                     print("Going through:",teams.valueForKey("teamName")!, " --- Current team:",currentTeam)
-                    if String(someTeam.valueForKey("teamName")!) == currentTeam {
-                        if String(teams.valueForKey("memberName")) == newTeamMember{
-                            memberCheck = true
-                        } else {
-                            memberCheck = false
-                        }
+                    if String(originalTeam.valueForKey("teamName")!) == currentTeam {
+                        print(teams.valueForKey("memberName"))
                         
+                        if String(teams.valueForKey("memberName")!) == newTeamMember{
+                            memberCheck = true
+                        }
                     }
                 }
                 // If new team member was not found, add him to the team. If found, do nothing.
                 if memberCheck == false {
+                    let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
+                    let team = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+
                     team.setValue(teamName, forKey: "teamName")
                     team.setValue(newTeamMember, forKey: "memberName")
                     teamMembers.append(newTeamMember)
@@ -298,7 +298,7 @@ class DataManager: NSObject {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
-    
+        
     }
     
     // Get team from core data

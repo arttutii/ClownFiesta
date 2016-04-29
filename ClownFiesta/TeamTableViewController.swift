@@ -10,7 +10,7 @@ import UIKit
 
 let teamTableSingleton = TeamTableViewController()
 
-class TeamTableViewController: UITableViewController, TeamProtocol {
+class TeamTableViewController: UITableViewController{
     
     // MARK: Properties
     
@@ -27,7 +27,6 @@ class TeamTableViewController: UITableViewController, TeamProtocol {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        registerAsObserver()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name: "load", object: nil)
         
         self.tableView.backgroundColor = UIColor.clearColor()
@@ -70,16 +69,6 @@ class TeamTableViewController: UITableViewController, TeamProtocol {
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         cell.backgroundColor = UIColor.clearColor()
-    }
-    
-    func registerAsObserver() {
-        print("DOUBLE FUCK")
-        teamControl.teamObservers.append(self)
-    }
-    
-    func notifyObserver() {
-        self.tableView.reloadData()
-        print("FUCK")
     }
     
     /*

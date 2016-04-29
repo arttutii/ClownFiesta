@@ -11,22 +11,19 @@ import CoreLocation
 
 let teamSingleton = TeamViewController()
 
-class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol  {
+class TeamViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Properties
-    var teamObservers = [TeamProtocol]()
     let detector:BeaconDetective = detectorSingleton
     let dataControl = dataManager
     
     var addMemberField: String?
     
-   
     @IBOutlet weak var teamNameField: UITextField!
     @IBOutlet var newWordField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //registerAsObserver()
         
         teamNameField.delegate = self
         teamNameField.autocapitalizationType = .Sentences
@@ -49,14 +46,6 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func registerAsObserver() {
-        detector.observerViews.append(self)
-    }
-    
-    func notifyObserver() {
-        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -92,6 +81,17 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         presentViewController(newWordPrompt, animated: true, completion: nil)
     }
     
+    func showAlert() {
+        let alert = UIAlertView(title: "Error", message: "Member already exists in team", delegate: nil, cancelButtonTitle: nil)
+        alert.show()
+        
+        let delay = 2.0 * Double(NSEC_PER_SEC)
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
+        dispatch_after(time, dispatch_get_main_queue(), {
+            alert.dismissWithClickedButtonIndex(-1, animated: true)
+        })
+    }
+    
     func addTextField(textField: UITextField!){
         // add the text field and make the result global
         textField.placeholder = "Player name"
@@ -104,15 +104,9 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         dataControl.addMemberToTeam("Team", newTeamMember: (self.newWordField?.text)!)
         // Used to reload the Team tableView data
         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
-    }
-    
-    // Go through the array of observer ViewControllers and call their notify method
-    func notifyObserverViews() {
-        print("CALL FUCK")
-        for i in teamObservers {
-            i.notifyObserver()
+        if dataControl.memberCheck == true {
+            showAlert()
         }
-        print(String(teamObservers))
     }
 
 }

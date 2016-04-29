@@ -10,6 +10,9 @@ import UIKit
 
 class ClueFoundViewController: UIViewController {
 
+    let dataControl = dataManager
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,7 +20,9 @@ class ClueFoundViewController: UIViewController {
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "YellowAppBackground")!)
-        navigationItem.hidesBackButton = true  
+        navigationItem.hidesBackButton = true
+        
+        scoreLabel.text = String(dataControl.playerScore)
     }
 
     override func didReceiveMemoryWarning() {
