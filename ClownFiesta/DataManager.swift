@@ -96,9 +96,9 @@ class DataManager: NSObject {
             }
             
             //Keep for Deleting in case
-            for i in result! {
+            /*for i in result! {
                 managedContext.deleteObject(i as! NSManagedObject)
-            }
+            }*/
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")

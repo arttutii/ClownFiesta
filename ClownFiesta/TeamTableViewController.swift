@@ -31,7 +31,6 @@ class TeamTableViewController: UITableViewController, TeamProtocol {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name: "load", object: nil)
         
         self.tableView.backgroundColor = UIColor.clearColor()
-        dataControl.fetchTeam()
     }
 
     override func didReceiveMemoryWarning() {

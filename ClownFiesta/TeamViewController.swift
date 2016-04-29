@@ -34,9 +34,14 @@ class TeamViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         view.addGestureRecognizer(tap)
 
         teamNameField.text = dataControl.currentTeam
+        dataControl.currentTeam = teamNameField.text!
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "BlueAppBackground")!)
+        
+        dataControl.saveTeam(dataControl.currentTeam, memberName: dataControl.playerName)
+        dataControl.fetchTeam()
+        NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
     
     override func didReceiveMemoryWarning() {
