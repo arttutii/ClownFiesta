@@ -273,6 +273,7 @@ class DataManager: NSObject {
                         } else {
                             memberCheck = false
                         }
+                        
                     }
                 }
                 // If new team member was not found, add him to the team. If found, do nothing.
