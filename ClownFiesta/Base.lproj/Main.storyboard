@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Nx-s4-nhv">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--ClownFiesta-->
@@ -293,34 +293,92 @@
             </objects>
             <point key="canvasLocation" x="2197" y="704"/>
         </scene>
-        <!--Leaderboard-->
-        <scene sceneID="FOJ-uL-3eH">
+        <!--Leaderboard Table View Controller-->
+        <scene sceneID="PbK-Ao-Acy">
             <objects>
-                <viewController id="Z7s-XR-iCe" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G0i-Os-CTq"/>
-                        <viewControllerLayoutGuide type="bottom" id="0cp-jF-QMn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0f3-Bx-o4B">
+                <tableViewController id="zWY-EI-cZe" customClass="LeaderboardTableViewController" customModule="ClownFiesta" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" id="GKa-5C-EK7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PurpleAppBackground" translatesAutoresizingMaskIntoConstraints="NO" id="srA-Ug-FtN">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Leaderboard" id="Npq-PQ-yGC">
-                        <barButtonItem key="backBarButtonItem" title="back" id="5kJ-D6-dxb"/>
-                    </navigationItem>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeaderboardTableViewCell" rowHeight="70" id="flK-KE-n8Y" customClass="LeaderboardTableViewCell" customModule="ClownFiesta" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="flK-KE-n8Y" id="N2P-uk-n6t">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3y-al-5fu">
+                                            <rect key="frame" x="13" y="8" width="67" height="30"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Position">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="21" name="AmericanTypewriter-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="2"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7z-z9-zfX">
+                                            <rect key="frame" x="13" y="32" width="229" height="36"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Player Name">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="24" name="AmericanTypewriter-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="2"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uWK-Yp-hVp">
+                                            <rect key="frame" x="93" y="0.0" width="40" height="38"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiV-rh-TX3">
+                                            <rect key="frame" x="168" y="5" width="137" height="59"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Score">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="31" name="AmericanTypewriter-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                            <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="shadowOffset" width="1" height="2"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="leaderboardImage" destination="uWK-Yp-hVp" id="PJQ-DE-agQ"/>
+                                    <outlet property="playerName" destination="g7z-z9-zfX" id="GP4-a4-kBa"/>
+                                    <outlet property="playerPosition" destination="v3y-al-5fu" id="L9L-Ub-WKS"/>
+                                    <outlet property="playerScore" destination="tiV-rh-TX3" id="j7r-mt-SNs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zWY-EI-cZe" id="EF2-ct-XTy"/>
+                            <outlet property="delegate" destination="zWY-EI-cZe" id="TJs-tn-I2O"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NBr-HO-RQM"/>
                     <connections>
-                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="jjm-19-eEs"/>
+                        <segue destination="UFb-qt-uqG" kind="push" identifier="ClueFoundSegue" animates="NO" id="hKk-ch-sxn"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kRa-Qp-MZz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W7a-Go-hN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1516" y="1626"/>
+            <point key="canvasLocation" x="1720" y="1609"/>
         </scene>
         <!--Fiesta Controller-->
         <scene sceneID="rTf-8U-Mct">
@@ -687,15 +745,15 @@
             <objects>
                 <tableViewController id="KqZ-zR-NB7" customClass="TeamTableViewController" customModule="ClownFiesta" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="GRd-CC-AKV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="280" height="282"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TeamTableViewCell" rowHeight="65" id="6sn-4m-fsd" customClass="TeamTableViewCell" customModule="ClownFiesta" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="28" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6sn-4m-fsd" id="cOd-FV-Wkj">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nfZ-xq-2y8">
@@ -820,7 +878,7 @@
                                 <rect key="frame" x="5" y="64" width="153" height="159"/>
                                 <state key="normal" image="LargeTrophyIcon"/>
                                 <connections>
-                                    <segue destination="Z7s-XR-iCe" kind="push" id="C96-bl-bB8"/>
+                                    <segue destination="zWY-EI-cZe" kind="push" id="XuA-Dx-wPY"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfa-ZV-afS" userLabel="GameModes">
@@ -908,16 +966,15 @@
         <image name="Logo" width="640" height="360"/>
         <image name="MapIcon" width="25" height="25"/>
         <image name="MapIcon100" width="100" height="100"/>
-        <image name="PurpleAppBackground" width="360" height="540"/>
         <image name="RedAppBackground" width="360" height="540"/>
         <image name="YellowAppBackground" width="360" height="540"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="COK-dK-Erl"/>
         <segue reference="JPa-v9-bei"/>
-        <segue reference="jEY-VW-Qix"/>
+        <segue reference="QJY-KP-2xs"/>
+        <segue reference="COK-dK-Erl"/>
+        <segue reference="sVR-1O-ar3"/>
+        <segue reference="hKk-ch-sxn"/>
         <segue reference="YH2-km-tXd"/>
-        <segue reference="nIw-Vx-esM"/>
-        <segue reference="gnt-l0-blg"/>
     </inferredMetricsTieBreakers>
 </document>
