@@ -26,6 +26,7 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Make sure that the currentClue exists and set the pin on the mapView.
         if gameMode.currentClue != nil {
             placeMapPin(gameMode.currentClue!.clueDescription, latitude: gameMode.currentClue!.beaconLatitude, longitude: gameMode.currentClue!.beaconLongitude)
         }

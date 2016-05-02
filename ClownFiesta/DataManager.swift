@@ -14,19 +14,23 @@ let dataManager = DataManager()
 class DataManager: NSObject {
     // MARK: Properties
     
+    // Singleton of the GameController class
+    let gameMode = gameSingleton
+    
+    // Class variables
     var player: Player!
     var newTeam: Team!
     var originalTeam: Team!
     var games: [NSManagedObject]!
     var teams: [NSManagedObject]!
     
-    let gameMode = gameSingleton
-    
+    // Team variables
     var teamName: String!
     var teamMembers: [String]! = []
     var memberCheck: Bool? = false
     var currentTeam: String!
     
+    // Player Variables
     var playerName: String!
     var playerAge: String!
     var playerLocation: String!
@@ -39,7 +43,8 @@ class DataManager: NSObject {
         self.playerScore = 0
     }
     
-    // This function is ran only the first time the application is launched
+    // This function is ran only the first time the application is launched, as the empty object 
+    // is only created once and then altered everytime after when the saveData is called.
     // Saves user's data
     func saveFirstData(name: String, age: String, location: String, score: String) {
         // Create the Data Context
@@ -81,10 +86,6 @@ class DataManager: NSObject {
         // Create the Data Context
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        
-        // Keep for creation if needed. Create data object to save into context
-        //let entity =  NSEntityDescription.entityForName("Player", inManagedObjectContext:managedContext)
-        //var player = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
         
         let fetchRequest = NSFetchRequest(entityName: "Player")
         
@@ -164,22 +165,19 @@ class DataManager: NSObject {
         } catch let error as NSError  {
             print("Could not save \(error), \(error.userInfo)")
         }
-        print(game)
-        
-        
     }
     
     // Gets the games from core data
     func fetchGame() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
-        
         let fetchRequest = NSFetchRequest(entityName: "SavedGame")
         
         do {
             let results:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             games = results as! [NSManagedObject]
             
+            // Check if the results exist
             if let res = results {
                 if res.count == 0 {
                     //Do Nothing
@@ -216,6 +214,7 @@ class DataManager: NSObject {
         do {
             let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             
+            // Check if the result exists
             if let res = result {
                 if res.count == 0 {
                     let entity =  NSEntityDescription.entityForName("Team", inManagedObjectContext:managedContext)
@@ -225,6 +224,7 @@ class DataManager: NSObject {
                     team.setValue(playerName, forKey: "memberName")
                     
                 } else {
+                    // Replace the values of the teamName
                     newTeam = result![0] as! Team
                     if String(newTeam.valueForKey("teamName")!) == currentTeam {
                         newTeam.setValue(playerName, forKey: "memberName")
@@ -249,6 +249,8 @@ class DataManager: NSObject {
         print("Hello, Team has been saved!")
         
     }
+    
+    // Adding a member to the already existing team
     func addMemberToTeam(teamName: String, newTeamMember: String) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -257,6 +259,7 @@ class DataManager: NSObject {
         do {
             let result:NSArray? = try managedContext.executeFetchRequest(fetchRequest)
             
+            // Check if result exists
             if let res = result {
                 originalTeam = result![0] as! Team
                 // Search through teams and look if the new team member is already in the team

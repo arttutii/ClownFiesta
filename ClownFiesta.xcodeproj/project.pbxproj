@@ -203,7 +203,6 @@
 			children = (
 				6A25D5DF1CC77C1900F94AF2 /* GameController.swift */,
 				6A8F05701CD370C600450154 /* Leaderboard.swift */,
-				6A8F05741CD3756600450154 /* LeaderboardPlayers.swift */,
 			);
 			name = GameControl;
 			sourceTree = "<group>";
@@ -220,6 +219,7 @@
 				6A09D9E01CC8DAFE00448836 /* MapMark.swift */,
 				6AB8BC9C1CB7B87A0061C952 /* Game.swift */,
 				6AB8BC9E1CB7B8D60061C952 /* Clue.swift */,
+				6A8F05741CD3756600450154 /* LeaderboardPlayers.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -233,8 +233,8 @@
 				6A524A011CBCFE4900FE7F0C /* ClueTableViewController.swift */,
 				6A0EC3601CD21E5E003594B4 /* TeamTableViewCell.swift */,
 				6A0EC35E1CD21E40003594B4 /* TeamTableViewController.swift */,
-				6A8F056E1CD3705B00450154 /* LeaderboardTableViewController.swift */,
 				6A8F05721CD3741D00450154 /* LeaderboardTableViewCell.swift */,
+				6A8F056E1CD3705B00450154 /* LeaderboardTableViewController.swift */,
 			);
 			name = TableViewControllers;
 			sourceTree = "<group>";

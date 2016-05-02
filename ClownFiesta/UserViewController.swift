@@ -47,6 +47,7 @@ class UserViewController: UIViewController, UITextFieldDelegate, BeaconProtocol 
         locationTextField.text = dataControl.playerLocation
         scoreLabel.text = String(dataControl.playerScore)
         
+        // Initial save, only use of this method.
         dataControl.saveFirstData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
         
     }

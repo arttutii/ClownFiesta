@@ -21,13 +21,4 @@ class Game {
         self.gameLocation = GameLocation
         self.gameDescription = GameDescription
     }
-    
-    /* Un-used, save for future
-    func setVariables(GameName: String, GameClues: [Clue], GameLocation: String, GameDescription: String) {
-        self.gameName = GameName
-        self.gameClues = GameClues
-        self.gameLocation = GameLocation
-        self.gameDescription = GameDescription
-    } */
-    
 }

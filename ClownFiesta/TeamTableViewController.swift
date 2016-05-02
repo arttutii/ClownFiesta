@@ -14,18 +14,14 @@ class TeamTableViewController: UITableViewController{
     
     // MARK: Properties
     
+    // Get Instances
     let dataControl = dataManager
     let teamControl = teamSingleton
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
+        // Used for reloading the table view container, inside the TeamViewController
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:", name: "load", object: nil)
         
         self.tableView.backgroundColor = UIColor.clearColor()
@@ -38,19 +34,19 @@ class TeamTableViewController: UITableViewController{
     
     func loadList(notification: NSNotification) {
         self.tableView.reloadData()
-        print("1we")
+        print("Container data reloaded")
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // Checks the length of the teamMembers array and sets the rows.
         if dataControl.teamMembers.count == 0 {
+            // If teamMembers was empty then the return was nil, therefore we set a check and return of 0.
             return 0
         } else {
             return dataControl.teamMembers.count
@@ -60,6 +56,8 @@ class TeamTableViewController: UITableViewController{
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "TeamTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TeamTableViewCell
+        
+        // Set the tableView contents
         cell.memberNameLabel.text = dataControl.teamMembers[indexPath.row]
         print("membername: ",dataControl.teamMembers[indexPath.row])
         print("members count: ", dataControl.teamMembers.count)
@@ -70,49 +68,4 @@ class TeamTableViewController: UITableViewController{
         cell.backgroundColor = UIColor.clearColor()
     }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

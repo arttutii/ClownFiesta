@@ -21,13 +21,14 @@ class FiestaController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // playBackgroundMusic()
         
         // Load the gamemodes
         gameMode.loadGameModes()
         
         // Request authorization to use bluetooth
         detector.getAuthorization()
+        
+        // Possible animations and sound effects as an improvement to the fiesta.
     }
 
     override func didReceiveMemoryWarning() {

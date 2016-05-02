@@ -18,9 +18,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //Background of View
+        // Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "GreenAppBackground")!)
         
+        // Hides the navigation back button and create custom push button in navigation bar
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Main Menu", style: UIBarButtonItemStyle.Plain, target: self, action: "back:")
         self.navigationItem.leftBarButtonItem = newBackButton;
@@ -28,7 +29,7 @@ class GameViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.s
+        // Dispose of any resources that can be recreated.
     }
     
     func back(sender: UIBarButtonItem) {

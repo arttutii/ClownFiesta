@@ -20,9 +20,11 @@ class MainViewController: UIViewController, BeaconProtocol {
         super.viewDidLoad()
         registerAsObserver()
         
-        //Background of View
+        // Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "AppBackground")!)
         self.navigationItem.hidesBackButton = true
+        
+        // Get the User and Team from the Core Data in MainView
         dataControl.fetchUser()
         dataControl.fetchTeam()
     }

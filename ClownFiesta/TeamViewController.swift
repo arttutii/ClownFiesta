@@ -34,9 +34,10 @@ class TeamViewController: UIViewController, UITextFieldDelegate {
         teamNameField.text = dataControl.currentTeam
         dataControl.currentTeam = teamNameField.text!
         
-        //Background of View
+        // Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "BlueAppBackground")!)
         
+        // "Fetch, Save, Fetch, Reload" is required as the team from coreData must be overwritten on load.
         dataControl.fetchTeam()
         dataControl.saveTeam(dataControl.currentTeam, memberName: dataControl.playerName)
         dataControl.fetchTeam()
@@ -60,8 +61,9 @@ class TeamViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(textField: UITextField) {
         dataControl.currentTeam = teamNameField.text!
+        // Save the Team after the teamName has been set.
         dataControl.saveTeam(dataControl.currentTeam, memberName: dataControl.playerName)
-        print("--------------------",dataControl.currentTeam, dataControl.playerName)
+        print("----",dataControl.currentTeam, dataControl.playerName)
         dataControl.fetchTeam()
         
         // Used to reload the Team tableView data

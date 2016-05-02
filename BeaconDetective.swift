@@ -28,33 +28,32 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
         }
         locationManager.delegate = self
         locationManager.startRangingBeaconsInRegion(rangingRegion)
-
+        
     }
     
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
-       
+        
         if (knownBeacons.count > 0) {
             let closestBeacon = knownBeacons[0] as CLBeacon
             if closestBeacon.proximity.rawValue <= 2 {
-                //print("Closest beacon: ", closestBeacon)
                 if closestBeacon.minor.integerValue == gameMode.currentClue?.beaconMinor &&
-                   closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {
-                    // confirm clue as Located & mark the clue as Found
-                    print("BEACON FOUND!!!!")
-                    if gameMode.currentClue?.clueFound == false {
-                        gameMode.currentClue?.clueFound = true
-                        // Save the Game
-                        dataControl.saveGame((gameMode.currentGameMode?.gameName)!, clueFound: (gameMode.currentGameMode?.gameClues[gameMode.currentClueInt!].clueFound)!, clueInt: (gameMode.currentClueInt)!, clueScore: (gameMode.currentClue?.clueScore)! )
-                        // Add clueScore to the playerscore
-                        dataControl.playerScore += (gameMode.currentClue?.clueScore)!
-                        // Save the User Data
-                        dataControl.saveData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
-                        notifyObserverViews()
-                    } else {
-                        print("Current clue's clueFound value is true, game is not saved.")
-                    }
-                    
+                    closestBeacon.major.integerValue == gameMode.currentClue?.beaconMajor {
+                        // confirm clue as Located & mark the clue as Found
+                        print("Beacon Found")
+                        if gameMode.currentClue?.clueFound == false {
+                            gameMode.currentClue?.clueFound = true
+                            // Save the Game
+                            dataControl.saveGame((gameMode.currentGameMode?.gameName)!, clueFound: (gameMode.currentGameMode?.gameClues[gameMode.currentClueInt!].clueFound)!, clueInt: (gameMode.currentClueInt)!, clueScore: (gameMode.currentClue?.clueScore)! )
+                            // Add clueScore to the playerscore
+                            dataControl.playerScore += (gameMode.currentClue?.clueScore)!
+                            // Save the User Data
+                            dataControl.saveData(dataControl.playerName, age: dataControl.playerAge, location: dataControl.playerLocation, score: String(dataControl.playerScore))
+                            notifyObserverViews()
+                        } else {
+                            print("Current clue's clueFound value is true, game is not saved.")
+                        }
+                        
                 }
             } else {
                 // Do nothing since beacon is not close enough to the device.
@@ -76,7 +75,7 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-
+        
     }
     
     // Go through the array of observer ViewControllers and call their notify method
