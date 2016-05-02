@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController, BeaconProtocol {
+class GameViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var modeLabel: UILabel!
@@ -17,7 +17,6 @@ class GameViewController: UIViewController, BeaconProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //registerAsObserver()
         
         //Background of View
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "GreenAppBackground")!)
@@ -34,14 +33,6 @@ class GameViewController: UIViewController, BeaconProtocol {
     
     func back(sender: UIBarButtonItem) {
         performSegueWithIdentifier("menuToMenu", sender: self)
-    }
-    
-    func registerAsObserver() {
-        detector.observerViews.append(self)
-    }
-    
-    func notifyObserver() {
-        performSegueWithIdentifier("ClueFoundSegue", sender: self)
     }
     
 }

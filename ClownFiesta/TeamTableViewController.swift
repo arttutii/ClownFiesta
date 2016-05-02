@@ -17,7 +17,6 @@ class TeamTableViewController: UITableViewController{
     let dataControl = dataManager
     let teamControl = teamSingleton
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ClueController: UIViewController, BeaconProtocol {
+class ClueController: UIViewController{
     
     // MARK: Properties
     
@@ -23,7 +23,6 @@ class ClueController: UIViewController, BeaconProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //registerAsObserver()
 
         // Do any additional setup after loading the view.
         // View Background
@@ -50,14 +49,6 @@ class ClueController: UIViewController, BeaconProtocol {
         // Dispose of any resources that can be recreated.
     }
     
-    func registerAsObserver() {
-        detector.observerViews.append(self)
-    }
-    
-    func notifyObserver() {
-        performSegueWithIdentifier("ClueFoundSegue", sender: self)
-    }
-    
     func back(sender: UIBarButtonItem) {
         performSegueWithIdentifier("clueToClues", sender: self)
     }
@@ -70,7 +61,6 @@ class ClueController: UIViewController, BeaconProtocol {
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action:UIAlertAction!) in
             // Close Alert
         }
-        alertController.addAction(cancelAction)
         
         let OKAction = UIAlertAction(title: "Yes", style: .Default) { (action:UIAlertAction!) in
             if self.gameMode.currentClue?.clueScore >= 20 {
@@ -83,6 +73,7 @@ class ClueController: UIViewController, BeaconProtocol {
             self.performSegueWithIdentifier("clueToMap", sender: self)
         }
         alertController.addAction(OKAction)
+        alertController.addAction(cancelAction)
         
         self.presentViewController(alertController, animated: true, completion:nil)
     }

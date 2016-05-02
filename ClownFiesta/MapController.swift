@@ -26,11 +26,9 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // NOT DONE YET, IF CHECK HAS TO BE FROM THE CLUECONTROLLER BUTTON ACTION
         if gameMode.currentClue != nil {
             placeMapPin(gameMode.currentClue!.clueDescription, latitude: gameMode.currentClue!.beaconLatitude, longitude: gameMode.currentClue!.beaconLongitude)
         }
-        //registerAsObserver()
         
         // If authorization is granted, start the location manager
         if CLLocationManager.locationServicesEnabled() {
@@ -38,7 +36,6 @@ class MapController: UIViewController, CLLocationManagerDelegate, BeaconProtocol
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-
         
     }
     

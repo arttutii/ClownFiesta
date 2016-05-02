@@ -85,5 +85,4 @@ class BeaconDetective:NSObject, CLLocationManagerDelegate {
             i.notifyObserver()
         }
     }
-    
 }

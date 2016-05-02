@@ -6,8 +6,8 @@
 //  Copyright © 2016 Oliver. All rights reserved.
 //
 
-
 let leaderboardSingleton = Leaderboard()
+
 class Leaderboard {
 
     var leaderboard = [LeaderboardPlayers]()

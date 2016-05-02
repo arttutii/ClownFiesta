@@ -62,7 +62,6 @@ class LeaderboardTableViewController: UITableViewController {
             cell.leaderboardImage.hidden = true
         }
         
-        
         return cell
     }
     
